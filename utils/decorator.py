@@ -43,45 +43,6 @@ def beautifier(func):
     return wrapper
 
 
-def countdown(func):
-    """
-    Decorator to time function execution and log performance.
-
-    This decorator measures the elapsed time of the decorated function
-    and prints a formatted log with the execution duration.
-
-    :param func: The function to be decorated.
-    :return: A wrapped function that adds timing and logging around the original call.
-    """
-
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        """
-        Wrapper that executes the function with timing and logs.
-
-        :param args: Positional arguments passed to the original function.
-        :param kwargs: Keyword arguments passed to the original function.
-        :return: The return value of the original function.
-        """
-        print("*" * WIDTH)
-        print(f"The function named {func.__name__!r} is starting:")
-        print("-" * WIDTH)
-
-        time_start = perf_counter()
-
-        try:
-            return func(*args, **kwargs)
-        finally:
-            time_end = perf_counter()
-            time_elapsed = time_end - time_start
-            print("-" * WIDTH)
-            print(f"The function named {func.__name__!r} took {time_elapsed:.4f} seconds to complete.")
-            print("*" * WIDTH)
-            print()
-
-    return wrapper
-
-
 def clock(desc: str | None = None):
     """
     Decorator to time function execution and log performance.
@@ -135,6 +96,45 @@ def clock(desc: str | None = None):
         return wrapper
 
     return decorator
+
+
+def countdown(func):
+    """
+    Decorator to time function execution and log performance.
+
+    This decorator measures the elapsed time of the decorated function
+    and prints a formatted log with the execution duration.
+
+    :param func: The function to be decorated.
+    :return: A wrapped function that adds timing and logging around the original call.
+    """
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        """
+        Wrapper that executes the function with timing and logs.
+
+        :param args: Positional arguments passed to the original function.
+        :param kwargs: Keyword arguments passed to the original function.
+        :return: The return value of the original function.
+        """
+        print("*" * WIDTH)
+        print(f"The function named {func.__name__!r} is starting:")
+        print("-" * WIDTH)
+
+        time_start = perf_counter()
+
+        try:
+            return func(*args, **kwargs)
+        finally:
+            time_end = perf_counter()
+            time_elapsed = time_end - time_start
+            print("-" * WIDTH)
+            print(f"The function named {func.__name__!r} took {time_elapsed:.4f} seconds to complete.")
+            print("*" * WIDTH)
+            print()
+
+    return wrapper
 
 
 def timer(arg: Callable | str | None = None) -> Callable:
