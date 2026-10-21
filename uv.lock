@@ -11,6 +11,15 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "access-modifiers"
+version = "0.3.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5e/94/187bf6ab3c0e474b3bbf30d886ff9b10d13601209c70566773305e7f075c/access_modifiers-0.3.1.tar.gz", hash = "sha256:4e5cbd38b48f2c0a5835f4b55b2ccf837a7ddacf41a590e9ea3a7cf9ca73b663", size = 5997, upload-time = "2019-08-27T12:00:13.442Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/66/82/ed8df97f3a3099ef55d22bad4119aa64526f3538d6ca8a5147cf151ee296/access_modifiers-0.3.1-py3-none-any.whl", hash = "sha256:02f5cee19501173708e014ce4f4df89ee49641836aac4543cee6a7d7478e3f87", size = 11365, upload-time = "2019-08-27T12:00:11.83Z" },
+]
+
+[[package]]
 name = "altair"
 version = "6.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -645,6 +654,7 @@ name = "py-st-run-pro"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "access-modifiers" },
     { name = "streamlit" },
 ]
 
@@ -655,7 +665,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "streamlit", specifier = ">=1.66.0" }]
+requires-dist = [
+    { name = "access-modifiers", specifier = ">=0.3.1" },
+    { name = "streamlit", specifier = ">=1.66.0" },
+]
 
 [package.metadata.requires-dev]
 dev = [
