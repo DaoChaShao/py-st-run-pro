@@ -15,6 +15,40 @@ from typing import Any, Self, override
 from .constants import WIDTH
 
 
+class Access:
+
+    @override
+    def __getattribute__(self, attr: str) -> object | Any:
+        """
+        Override __getattribute__ to control attribute access
+
+        :param attr: The attribute name to access
+        :return: The attribute value if accessible, otherwise raise AttributeError
+        """
+        if attr.startswith("__") and attr.endswith("__"):
+            return super().__getattribute__(attr)
+
+        if not attr.startswith("_"):
+            return super().__getattribute__(attr)
+
+        _value = super().__getattribute__(attr)
+
+        if callable(_value):
+            return _value
+
+        _frame = currentframe().f_back
+        if _frame is not None:
+            _caller_self = _frame.f_locals.get("self")
+            if _caller_self is self:
+                return _value
+
+        raise AttributeError(
+            f"[Access Denied] "
+            f"{type(self).__name__!r} object attribute "
+            f"{attr!r} is private and cannot be accessed externally!"
+        )
+
+
 class Beautifier:
     """ beautifying code blocks using a context manager """
 
@@ -35,50 +69,6 @@ class Beautifier:
         print(f"The block named {self._desc!r} has completed.")
         print("*" * WIDTH)
         print()
-
-
-class Timer:
-    """ timing code blocks using a context manager """
-
-    def __init__(self, desc: str | None = None, *, precision: int = 5):
-        """
-        Initialise the Timer class
-
-        :param desc: the description of a timer
-        :param precision: the number of decimal places to round the elapsed time
-        """
-        if precision < 0:
-            raise ValueError("Precision must be >= 0")
-
-        self._desc = desc
-        self._precision = precision
-        self._start: float = 0.0
-        self._end: float = 0.0
-        self._elapsed: float = 0.0
-
-    def __enter__(self) -> Self:
-        """ Start the timer """
-        self._start = perf_counter()
-        print("*" * WIDTH)
-        print(f"{self._desc!r} has started.")
-        print("-" * WIDTH)
-        return self
-
-    def __exit__(self, *args) -> None:
-        """ Stop the timer and calculate the elapsed time """
-        self._end = perf_counter()
-        self._elapsed = self._end - self._start
-
-        print("-" * WIDTH)
-        print(f"{self._desc!r} took {self._elapsed:.{self._precision}f} seconds.")
-        print("*" * WIDTH)
-
-    def __repr__(self) -> str:
-        """ Return a string representation of the timer """
-        _desc: str = self._desc or "Timer"
-        if self._elapsed != 0.0:
-            return f"{_desc!r} took {self._elapsed:.{self._precision}f} seconds."
-        return f"{_desc!r} has NOT started."
 
 
 class RandomSeed:
@@ -175,38 +165,48 @@ class RandomSeed:
         return _base
 
 
-class Access:
+class Timer:
+    """ timing code blocks using a context manager """
 
-    @override
-    def __getattribute__(self, attr: str) -> object | Any:
+    def __init__(self, desc: str | None = None, *, precision: int = 5):
         """
-        Override __getattribute__ to control attribute access
+        Initialise the Timer class
 
-        :param attr: The attribute name to access
-        :return: The attribute value if accessible, otherwise raise AttributeError
+        :param desc: the description of a timer
+        :param precision: the number of decimal places to round the elapsed time
         """
-        if attr.startswith("__") and attr.endswith("__"):
-            return super().__getattribute__(attr)
+        if precision < 0:
+            raise ValueError("Precision must be >= 0")
 
-        if not attr.startswith("_"):
-            return super().__getattribute__(attr)
+        self._desc = desc
+        self._precision = precision
+        self._start: float = 0.0
+        self._end: float = 0.0
+        self._elapsed: float = 0.0
 
-        _value = super().__getattribute__(attr)
+    def __enter__(self) -> Self:
+        """ Start the timer """
+        self._start = perf_counter()
+        print("*" * WIDTH)
+        print(f"{self._desc!r} has started.")
+        print("-" * WIDTH)
+        return self
 
-        if callable(_value):
-            return _value
+    def __exit__(self, *args) -> None:
+        """ Stop the timer and calculate the elapsed time """
+        self._end = perf_counter()
+        self._elapsed = self._end - self._start
 
-        _frame = currentframe().f_back
-        if _frame is not None:
-            _caller_self = _frame.f_locals.get("self")
-            if _caller_self is self:
-                return _value
+        print("-" * WIDTH)
+        print(f"{self._desc!r} took {self._elapsed:.{self._precision}f} seconds.")
+        print("*" * WIDTH)
 
-        raise AttributeError(
-            f"[Access Denied] "
-            f"{type(self).__name__!r} object attribute "
-            f"{attr!r} is private and cannot be accessed externally!"
-        )
+    def __repr__(self) -> str:
+        """ Return a string representation of the timer """
+        _desc: str = self._desc or "Timer"
+        if self._elapsed != 0.0:
+            return f"{_desc!r} took {self._elapsed:.{self._precision}f} seconds."
+        return f"{_desc!r} has NOT started."
 
 
 if __name__ == "__main__":
