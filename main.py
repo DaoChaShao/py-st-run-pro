@@ -4,11 +4,12 @@
 # @Author   :   Shawn
 # @Version  :   Version 0.1.0
 # @File     :   main.py
-# @Desc     :   
+# @Desc     :
 
 def main() -> None:
     """ Main Function """
     pass
+
 
 if __name__ == "__main__":
     main()
