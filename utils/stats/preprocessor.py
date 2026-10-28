@@ -7,7 +7,7 @@
 # @Desc     :
 
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Self
 
 from access_modifiers import protectedmethod
 from pandas import DataFrame, Series, read_csv, read_excel
@@ -115,30 +115,28 @@ def get_reg_label_distribution(labels: Series, *, display: bool = True) -> dict:
 class TabularLoader(Access):
     """ Load and display data from a file. """
 
-    def __init__(
-            self,
-            filepath: str | Path,
-            *,
-            file_category: str | TabularFormats | Literal["csv", "excel"] = TabularFormats.CSV,
-            display: bool = True
-    ) -> None:
+    def __init__(self, filepath: str | Path, *, display: bool = True) -> None:
         """
         Initialise the FileLoader class
 
         :param filepath: The path to the file.
-        :param file_category: The category of the file (csv or excel).
         :param display: Whether to display the dataset content and summary.
         :return: None
         """
         super().__init__()
         self._path: Path = Path(filepath)
-        self._type: TabularFormats = TabularFormats(file_category)
+        self._type: TabularFormats | None = None
         self._display: bool = display
         self._dataset: DataFrame | None = None
 
-    @protectedmethod
-    def _load_data(self) -> None:
-        """ Load data from a file based on the specified file category. """
+    def load(self, file_category: str | TabularFormats | Literal["csv", "excel"] = TabularFormats.CSV) -> DataFrame:
+        """
+        Load data from a file based on the specified file category.
+
+        :param file_category: The category of the file (csv or excel).
+        :return: The loaded dataset.
+        """
+        self._type: TabularFormats = TabularFormats(file_category)
         match self._type:
             case TabularFormats.CSV:
                 self._dataset = read_csv(self._path.resolve())
@@ -147,14 +145,13 @@ class TabularLoader(Access):
             case _:
                 raise ValueError(f"Invalid file category: {self._type}")
 
-    def __enter__(self) -> DataFrame:
-        """ Load data from a file based on the specified file category. """
-        self._load_data()
         if self._display:
             self._display_info()
-
-        assert self._dataset is not None, "Dataset failed to load."
         return self._dataset
+
+    def __enter__(self) -> Self:
+        """ Enter the context manager. """
+        return self
 
     def __exit__(self, exc_type, exc_value, traceback) -> None:
         """
@@ -199,7 +196,7 @@ class TabularLoader(Access):
     def __repr__(self) -> str:
         """ Return the string representation of the FileLoader class. """
         return (
-            f"FileLoader("
+            f"TabularLoader("
             f"filepath={self._path!r}, "
             f"file_category={self._type!r}, "
             f"display={self._display!r})"
