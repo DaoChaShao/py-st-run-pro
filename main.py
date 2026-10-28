@@ -6,9 +6,18 @@
 # @File     :   main.py
 # @Desc     :
 
+from pathlib import Path
+
+from pandas import DataFrame
+
+from utils.stats import TabularFormats, TabularLoader
+
+
 def main() -> None:
     """ Main Function """
-    pass
+    filepath: Path = Path("data/exercise.xlsx")
+    with TabularLoader(filepath, display=True) as loader:
+        exercises: DataFrame = loader.load(file_category=TabularFormats.EXCEL)
 
 
 if __name__ == "__main__":
