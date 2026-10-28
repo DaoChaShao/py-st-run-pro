@@ -1,10 +1,11 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-10-28)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-10-29)
 
 ### Features
 
+- **main:** implement tabular data loading in main function ([790448a](https://github.com/DaoChaShao/py-st-run-pro/commit/790448adb0e86dab1383b757ebb14be52896e927))
 - **types:** add FeatureScalers enum and remove TabularFormats ([90a11a0](https://github.com/DaoChaShao/py-st-run-pro/commit/90a11a09c764791d86c3b2f777f91c723618093f))
 - **stats:** add TabularFormats enum for output types ([2df27b5](https://github.com/DaoChaShao/py-st-run-pro/commit/2df27b5d102b404100745ca98c1e543df6dab078))
 - **stats:** add preprocessor for label distribution and data loading ([e35ea4e](https://github.com/DaoChaShao/py-st-run-pro/commit/e35ea4e005fde15fb41d27421390ccc5665e6205))
@@ -22,6 +23,8 @@
 
 ### Chore
 
+- **deps:** add openpyxl dependency for Excel file support ([6f54d70](https://github.com/DaoChaShao/py-st-run-pro/commit/6f54d70d0ae672a5cd5138155dd4b88df10e8536))
+- **deps:** add openpyxl dependency for Excel file handling ([c56c25c](https://github.com/DaoChaShao/py-st-run-pro/commit/c56c25c9cd9a763bacd0392a7b9b57852778f637))
 - **deps:** add access-modifiers package as dependency ([acd23e8](https://github.com/DaoChaShao/py-st-run-pro/commit/acd23e813a08067230e3bdb9c327f6f15e305c29))
 - **deps:** add access-modifiers dependency ([bfac532](https://github.com/DaoChaShao/py-st-run-pro/commit/bfac5329f1103dd9bd1eea31cf16ffdbc686468d))
 - **project:** add pyproject.toml for project configuration ([492ebe4](https://github.com/DaoChaShao/py-st-run-pro/commit/492ebe41dea305820fb40c5d942c5b8bd8fd0be5))
@@ -32,6 +35,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with recent feature and refactor ([3747d38](https://github.com/DaoChaShao/py-st-run-pro/commit/3747d387d501222115d8a791970469304b97a472))
 - **changelog:** update CHANGELOG.md with recent feature and refactor entries ([7b2aa4d](https://github.com/DaoChaShao/py-st-run-pro/commit/7b2aa4db761e089cd8395e0979692d4cfff90138))
 - **changelog:** add CHANGELOG.md for v0.1.0 ([5621b8a](https://github.com/DaoChaShao/py-st-run-pro/commit/5621b8a4e5d46a2e882f393abaa5c21b3ca6bccd))
 - **readme:** add Chinese README with env setup and changelog ([3b2a26d](https://github.com/DaoChaShao/py-st-run-pro/commit/3b2a26d79d016bdcc08c697a819dfbe8e4cb8439))
@@ -39,6 +43,7 @@
 
 ### Code Refactoring
 
+- **stats:** redesign TabularLoader context manager API ([856d5c8](https://github.com/DaoChaShao/py-st-run-pro/commit/856d5c8754008e59799305689295fb1c640df468))
 - **stats:** remove stats processor module ([de87fed](https://github.com/DaoChaShao/py-st-run-pro/commit/de87fedd1a0e44edbd271454950d35881caa06a7))
 - **stats:** restructure module exports ([b19255b](https://github.com/DaoChaShao/py-st-run-pro/commit/b19255b151fcc86d2068b323986fcc45b88d8abc))
 - **helper:** reorder class definitions in helper.py ([44fa05c](https://github.com/DaoChaShao/py-st-run-pro/commit/44fa05c8175ae19cecee5db502da6687d94e09d6))
