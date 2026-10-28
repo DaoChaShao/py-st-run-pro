@@ -1,10 +1,14 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-10-21)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-10-28)
 
 ### Features
 
+- **types:** add FeatureScalers enum and remove TabularFormats ([90a11a0](https://github.com/DaoChaShao/py-st-run-pro/commit/90a11a09c764791d86c3b2f777f91c723618093f))
+- **stats:** add TabularFormats enum for output types ([2df27b5](https://github.com/DaoChaShao/py-st-run-pro/commit/2df27b5d102b404100745ca98c1e543df6dab078))
+- **stats:** add preprocessor for label distribution and data loading ([e35ea4e](https://github.com/DaoChaShao/py-st-run-pro/commit/e35ea4e005fde15fb41d27421390ccc5665e6205))
+- **stats:** add NumpySeed context manager and DataFrame summary helpers ([9bfd8dc](https://github.com/DaoChaShao/py-st-run-pro/commit/9bfd8dc453a9608ba2f8d5f144a67889b66a681b))
 - **utils:** add core enum type definitions ([ffde4d4](https://github.com/DaoChaShao/py-st-run-pro/commit/ffde4d4b9afb345d79a6f82fb193b24ffc863227))
 - **stats:** add file loader and random seed utilities ([c46deb3](https://github.com/DaoChaShao/py-st-run-pro/commit/c46deb33b75d034dee1d8ad83d7dfebe53e88c9c))
 - **stats:** add stats module init with core utilities ([f797bb2](https://github.com/DaoChaShao/py-st-run-pro/commit/f797bb265abde11282daefc2be071fcb36f6f474))
@@ -28,12 +32,15 @@
 
 ### Docs
 
+- **changelog:** update CHANGELOG.md with recent feature and refactor entries ([7b2aa4d](https://github.com/DaoChaShao/py-st-run-pro/commit/7b2aa4db761e089cd8395e0979692d4cfff90138))
 - **changelog:** add CHANGELOG.md for v0.1.0 ([5621b8a](https://github.com/DaoChaShao/py-st-run-pro/commit/5621b8a4e5d46a2e882f393abaa5c21b3ca6bccd))
 - **readme:** add Chinese README with env setup and changelog ([3b2a26d](https://github.com/DaoChaShao/py-st-run-pro/commit/3b2a26d79d016bdcc08c697a819dfbe8e4cb8439))
 - **readme:** add comprehensive project documentation ([ea44e27](https://github.com/DaoChaShao/py-st-run-pro/commit/ea44e27474bb57acd2846350462c9f686c935d0b))
 
 ### Code Refactoring
 
+- **stats:** remove stats processor module ([de87fed](https://github.com/DaoChaShao/py-st-run-pro/commit/de87fedd1a0e44edbd271454950d35881caa06a7))
+- **stats:** restructure module exports ([b19255b](https://github.com/DaoChaShao/py-st-run-pro/commit/b19255b151fcc86d2068b323986fcc45b88d8abc))
 - **helper:** reorder class definitions in helper.py ([44fa05c](https://github.com/DaoChaShao/py-st-run-pro/commit/44fa05c8175ae19cecee5db502da6687d94e09d6))
 - **decorator:** reorder clock and countdown definitions ([c1a8ecd](https://github.com/DaoChaShao/py-st-run-pro/commit/c1a8ecdcabaafe466b410ca7ad46b5e601352bb4))
 
