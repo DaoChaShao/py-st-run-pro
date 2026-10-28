@@ -4,9 +4,16 @@
 # @Author   :   Shawn
 # @Version  :   Version 0.1.0
 # @File     :   types.py
-# @Desc     :   
+# @Desc     :
 
 from enum import StrEnum, unique
+
+
+@unique
+class FeatureScalers(StrEnum):
+    NORMALISER = "normaliser"
+    STANDARDISER = "standardiser"
+    ROBUST_SCALER = "robust_scaler"
 
 
 @unique
@@ -23,7 +30,4 @@ class Missions(StrEnum):
     REG = "reg"
 
 
-@unique
-class TabularFormats(StrEnum):
-    CSV = "csv"
-    EXCEL = "excel"
+
