@@ -1,10 +1,16 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-10-29)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-04)
 
 ### Features
 
+- update the data ([2d0095e](https://github.com/DaoChaShao/py-st-run-pro/commit/2d0095e36f9e250fffc9162828af476a966f4deb))
+- **dbk:** add engines module skeleton ([1d99e7f](https://github.com/DaoChaShao/py-st-run-pro/commit/1d99e7f4c25feea11eb26fdcab0a215cd13dc26c))
+- **dbk:** add SQLite database path constants ([60af501](https://github.com/DaoChaShao/py-st-run-pro/commit/60af501493b03f66df29e8a529bf152fe6c636a1))
+- **dbk:** add database configuration dataclass ([3ae956d](https://github.com/DaoChaShao/py-st-run-pro/commit/3ae956d5c0fb9e572da4f4e2a9ae7f6918bcadd8))
+- **dbk:** add SQLAlchemy declarative base for dbk module ([71e811a](https://github.com/DaoChaShao/py-st-run-pro/commit/71e811af43a4e739614ff7ea989e32ec530cb08a))
+- **dbk:** add database core package initialization ([70ed94e](https://github.com/DaoChaShao/py-st-run-pro/commit/70ed94e2a5530eb30985c42c0c12a0bb875b2b9b))
 - **main:** implement tabular data loading in main function ([790448a](https://github.com/DaoChaShao/py-st-run-pro/commit/790448adb0e86dab1383b757ebb14be52896e927))
 - **types:** add FeatureScalers enum and remove TabularFormats ([90a11a0](https://github.com/DaoChaShao/py-st-run-pro/commit/90a11a09c764791d86c3b2f777f91c723618093f))
 - **stats:** add TabularFormats enum for output types ([2df27b5](https://github.com/DaoChaShao/py-st-run-pro/commit/2df27b5d102b404100745ca98c1e543df6dab078))
@@ -23,6 +29,9 @@
 
 ### Chore
 
+- **deps:** add sqlalchemy dependency to lock file ([abc27dc](https://github.com/DaoChaShao/py-st-run-pro/commit/abc27dc843d65fce3d6ee93882b18a5b38ccac25))
+- **deps:** add sqlalchemy dependency ([7c9af9b](https://github.com/DaoChaShao/py-st-run-pro/commit/7c9af9b68dee85154494e8e04d504daecae924c0))
+- **dbk:** add .gitignore for Python and IDE files ([dae43c0](https://github.com/DaoChaShao/py-st-run-pro/commit/dae43c0195e146fb473cb5baaa141c575fc73184))
 - **deps:** add openpyxl dependency for Excel file support ([6f54d70](https://github.com/DaoChaShao/py-st-run-pro/commit/6f54d70d0ae672a5cd5138155dd4b88df10e8536))
 - **deps:** add openpyxl dependency for Excel file handling ([c56c25c](https://github.com/DaoChaShao/py-st-run-pro/commit/c56c25c9cd9a763bacd0392a7b9b57852778f637))
 - **deps:** add access-modifiers package as dependency ([acd23e8](https://github.com/DaoChaShao/py-st-run-pro/commit/acd23e813a08067230e3bdb9c327f6f15e305c29))
@@ -35,6 +44,7 @@
 
 ### Docs
 
+- **changelog:** update CHANGELOG.md with new entries ([9789cfb](https://github.com/DaoChaShao/py-st-run-pro/commit/9789cfbaf2235944d9412a55a96466a84e810a83))
 - **changelog:** update changelog with recent feature and refactor ([3747d38](https://github.com/DaoChaShao/py-st-run-pro/commit/3747d387d501222115d8a791970469304b97a472))
 - **changelog:** update CHANGELOG.md with recent feature and refactor entries ([7b2aa4d](https://github.com/DaoChaShao/py-st-run-pro/commit/7b2aa4db761e089cd8395e0979692d4cfff90138))
 - **changelog:** add CHANGELOG.md for v0.1.0 ([5621b8a](https://github.com/DaoChaShao/py-st-run-pro/commit/5621b8a4e5d46a2e882f393abaa5c21b3ca6bccd))
