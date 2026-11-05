@@ -4,7 +4,7 @@
 # @Author   :   Shawn
 # @Version  :   Version 0.1.0
 # @File     :   configs.py
-# @Desc     :   
+# @Desc     :
 
 from dataclasses import dataclass
 from pathlib import Path
@@ -18,4 +18,4 @@ class DBConfig:
 
     @property
     def url(self) -> str:
-        return f"sqlite:///{self.path}"
+        return f"sqlite:///{self.path.resolve()}"
