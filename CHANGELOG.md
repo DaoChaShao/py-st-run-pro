@@ -1,10 +1,12 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-04)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-05)
 
 ### Features
 
+- **dbk:** implement SQLAlchemy engine initialization and database operations ([cea2f0e](https://github.com/DaoChaShao/py-st-run-pro/commit/cea2f0e8ce2e135884927f2ab296d03ec5e912d3))
+- **dbk:** add DBConfig and engine utilities to public API ([bbc2ac5](https://github.com/DaoChaShao/py-st-run-pro/commit/bbc2ac5eaae80e98cbe94d3826799195be915ae5))
 - update the data ([2d0095e](https://github.com/DaoChaShao/py-st-run-pro/commit/2d0095e36f9e250fffc9162828af476a966f4deb))
 - **dbk:** add engines module skeleton ([1d99e7f](https://github.com/DaoChaShao/py-st-run-pro/commit/1d99e7f4c25feea11eb26fdcab0a215cd13dc26c))
 - **dbk:** add SQLite database path constants ([60af501](https://github.com/DaoChaShao/py-st-run-pro/commit/60af501493b03f66df29e8a529bf152fe6c636a1))
@@ -27,6 +29,11 @@
 - **utils:** add constants module with width configuration ([8f948d3](https://github.com/DaoChaShao/py-st-run-pro/commit/8f948d32c40696a5c602e92c30804939f01fbda1))
 - **utils:** add package init with decorators and helpers ([b84fda2](https://github.com/DaoChaShao/py-st-run-pro/commit/b84fda22b252048aabc9555826ba21f85aaec0f8))
 
+### Bug Fixes
+
+- **dbk:** rename sqlite db file to sqlite3.db ([98f464a](https://github.com/DaoChaShao/py-st-run-pro/commit/98f464a7a5f067e063c25625b5aa9168dcb2aabe))
+- **dbk:** resolve relative path in SQLite connection URL ([8cd3135](https://github.com/DaoChaShao/py-st-run-pro/commit/8cd31359a4efcf99ba5a09776d647483edbd11d5))
+
 ### Chore
 
 - **deps:** add sqlalchemy dependency to lock file ([abc27dc](https://github.com/DaoChaShao/py-st-run-pro/commit/abc27dc843d65fce3d6ee93882b18a5b38ccac25))
@@ -44,6 +51,7 @@
 
 ### Docs
 
+- **changelog:** update CHANGELOG.md with new dbk entries ([7ff50fc](https://github.com/DaoChaShao/py-st-run-pro/commit/7ff50fc4b85c1520e49cc5b28367b4d4d5c3214c))
 - **changelog:** update CHANGELOG.md with new entries ([9789cfb](https://github.com/DaoChaShao/py-st-run-pro/commit/9789cfbaf2235944d9412a55a96466a84e810a83))
 - **changelog:** update changelog with recent feature and refactor ([3747d38](https://github.com/DaoChaShao/py-st-run-pro/commit/3747d387d501222115d8a791970469304b97a472))
 - **changelog:** update CHANGELOG.md with recent feature and refactor entries ([7b2aa4d](https://github.com/DaoChaShao/py-st-run-pro/commit/7b2aa4db761e089cd8395e0979692d4cfff90138))
@@ -53,6 +61,7 @@
 
 ### Code Refactoring
 
+- **main:** switch data source to SQLite DB ([c7b7f24](https://github.com/DaoChaShao/py-st-run-pro/commit/c7b7f249c668b01d92bd3684764fe19cbcba84a5))
 - **stats:** redesign TabularLoader context manager API ([856d5c8](https://github.com/DaoChaShao/py-st-run-pro/commit/856d5c8754008e59799305689295fb1c640df468))
 - **stats:** remove stats processor module ([de87fed](https://github.com/DaoChaShao/py-st-run-pro/commit/de87fedd1a0e44edbd271454950d35881caa06a7))
 - **stats:** restructure module exports ([b19255b](https://github.com/DaoChaShao/py-st-run-pro/commit/b19255b151fcc86d2068b323986fcc45b88d8abc))
