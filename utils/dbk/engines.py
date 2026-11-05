@@ -16,26 +16,6 @@ from .base import DECLARATION
 from .configs import DBConfig
 
 
-def create_database(engine: Engine) -> None:
-    """ Create a database """
-    DECLARATION.metadata.create_all(engine.engine)
-
-
-def drop_database(engine: Engine) -> None:
-    """ Drop a database """
-    DECLARATION.metadata.drop_all(engine.engine)
-
-
-def eliminate_database(engine: Engine, db_path: Path, *, display: bool = False) -> None:
-    """ Eliminate a database """
-    engine.dispose()
-
-    if db_path.exists():
-        remove(db_path)
-        if display:
-            print(f"Database '{db_path.name}' eliminated successfully.")
-
-
 class InitializeEngine(Access):
     """ Initialise Engine with SQLAlchemy """
 
@@ -69,6 +49,26 @@ class InitializeEngine(Access):
     def engine(self) -> Engine:
         """ Return the engine """
         return self._engine
+
+
+def create_database(engine: Engine) -> None:
+    """ Create a database """
+    DECLARATION.metadata.create_all(engine.engine)
+
+
+def drop_database(engine: Engine) -> None:
+    """ Drop a database """
+    DECLARATION.metadata.drop_all(engine.engine)
+
+
+def eliminate_database(engine: Engine, db_path: Path, *, display: bool = False) -> None:
+    """ Eliminate a database """
+    engine.dispose()
+
+    if db_path.exists():
+        remove(db_path)
+        if display:
+            print(f"Database '{db_path.name}' eliminated successfully.")
 
 
 if __name__ == "__main__":
