@@ -51,6 +51,7 @@
 
 ### Docs
 
+- **changelog:** update CHANGELOG.md with dbk feature and fix entries ([1065fd7](https://github.com/DaoChaShao/py-st-run-pro/commit/1065fd7c4e31bdf61915a3f83802370a88e4f17e))
 - **changelog:** update CHANGELOG.md with new dbk entries ([7ff50fc](https://github.com/DaoChaShao/py-st-run-pro/commit/7ff50fc4b85c1520e49cc5b28367b4d4d5c3214c))
 - **changelog:** update CHANGELOG.md with new entries ([9789cfb](https://github.com/DaoChaShao/py-st-run-pro/commit/9789cfbaf2235944d9412a55a96466a84e810a83))
 - **changelog:** update changelog with recent feature and refactor ([3747d38](https://github.com/DaoChaShao/py-st-run-pro/commit/3747d387d501222115d8a791970469304b97a472))
@@ -61,6 +62,7 @@
 
 ### Code Refactoring
 
+- **dbk:** move database functions after InitializeEngine class ([492e716](https://github.com/DaoChaShao/py-st-run-pro/commit/492e7166abbc5ae4538b33e9aab76cba29cfaea2))
 - **main:** switch data source to SQLite DB ([c7b7f24](https://github.com/DaoChaShao/py-st-run-pro/commit/c7b7f249c668b01d92bd3684764fe19cbcba84a5))
 - **stats:** redesign TabularLoader context manager API ([856d5c8](https://github.com/DaoChaShao/py-st-run-pro/commit/856d5c8754008e59799305689295fb1c640df468))
 - **stats:** remove stats processor module ([de87fed](https://github.com/DaoChaShao/py-st-run-pro/commit/de87fedd1a0e44edbd271454950d35881caa06a7))
