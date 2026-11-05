@@ -8,16 +8,22 @@
 
 from pathlib import Path
 
-from pandas import DataFrame
-
-from utils.stats import TabularFormats, TabularLoader
+from utils.dbk import DBConfig, InitializeEngine, create_database, eliminate_database
 
 
 def main() -> None:
     """ Main Function """
-    filepath: Path = Path("data/exercise.xlsx")
-    with TabularLoader(filepath, display=True) as loader:
-        exercises: DataFrame = loader.load(file_category=TabularFormats.EXCEL)
+    # filepath: Path = Path("data/exercise.xlsx")
+    # with TabularLoader(filepath, display=True) as loader:
+    #     exercises: DataFrame = loader.load(file_category=TabularFormats.EXCEL)
+
+    db_path: Path = Path("data/sqlite3.db")
+    config: DBConfig = DBConfig(path=db_path)
+    sqlite = InitializeEngine(config)
+
+    create_database(sqlite.engine)
+
+    # eliminate_database(sqlite.engine, db_path)
 
 
 if __name__ == "__main__":
