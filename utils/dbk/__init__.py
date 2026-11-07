@@ -25,14 +25,17 @@ __version__ = "0.1.0"
 from .base import DECLARATION
 from .configs import DBConfig
 from .constants import SQLITE
-from .engines import (
-    InitEngine,
+from .engines import InitEngine
+from .models import Exercise
+from .repository import (
+    check_table_exists,
+    count_data,
     create_db,
+    delete_data,
     drop_db,
     eliminate_db,
+    get_data,
 )
-from .models import Exercise
-from .repository import count_data, delete_data, get_data
 from .session import InitSession
 
 __all__ = [
@@ -43,13 +46,15 @@ __all__ = [
     "SQLITE",
 
     "InitEngine",
-    "create_db",
-    "delete_data",
-    "drop_db", "eliminate_db",
 
     "Exercise",
 
+    "check_table_exists",
     "count_data",
+    "create_db",
+    "delete_data",
+    "drop_db",
+    "eliminate_db",
     "get_data",
 
     "InitSession",
