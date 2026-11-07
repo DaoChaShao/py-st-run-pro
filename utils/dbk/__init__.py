@@ -32,7 +32,7 @@ from .engines import (
     eliminate_db,
 )
 from .models import Exercise
-from .repository import count_data, get_data
+from .repository import count_data, delete_data, get_data
 from .session import InitSession
 
 __all__ = [
@@ -44,6 +44,7 @@ __all__ = [
 
     "InitEngine",
     "create_db",
+    "delete_data",
     "drop_db", "eliminate_db",
 
     "Exercise",
