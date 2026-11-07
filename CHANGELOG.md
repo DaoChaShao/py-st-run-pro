@@ -1,10 +1,13 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-07)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-08)
 
 ### Features
 
+- **repository:** add database lifecycle management functions ([6fa3f62](https://github.com/DaoChaShao/py-st-run-pro/commit/6fa3f6250c6ccbbfb038a01ee71f538dca4ef610))
+- **preparation:** add row selection and CRUD actions ([284fc9a](https://github.com/DaoChaShao/py-st-run-pro/commit/284fc9a7a32138c2ec15554a1317b659e2118536))
+- **hammer:** add CRUD dialogs for exercise data management ([6a289d7](https://github.com/DaoChaShao/py-st-run-pro/commit/6a289d764909578ad2a3943e91ea0d98e8082498))
 - **repository:** add delete_data function for table operations ([dcab7cf](https://github.com/DaoChaShao/py-st-run-pro/commit/dcab7cf4ea3092a17b7ff8477693f4f40faf74d0))
 - **hammer:** add delete confirmation dialog and time step input ([e1d577f](https://github.com/DaoChaShao/py-st-run-pro/commit/e1d577f8ef65c9f244824843320fe03e901698cc))
 - **dbk:** expose delete_data in package public API ([b4174a6](https://github.com/DaoChaShao/py-st-run-pro/commit/b4174a6e588782ad44bc206d1f132eb86d2e6e42))
@@ -76,7 +79,7 @@
 
 ### Docs
 
-- **changelog:** update changelog with recent entries ([bf48fda](https://github.com/DaoChaShao/py-st-run-pro/commit/bf48fda333c4d0e4a5aa056cb0f26e2394efd045))
+- **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
 - **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
 - **changelog:** add dbk features and refactoring entries ([b253fc5](https://github.com/DaoChaShao/py-st-run-pro/commit/b253fc54e45abc762972e0cdfb7115b09225d0ce))
@@ -92,6 +95,8 @@
 
 ### Code Refactoring
 
+- **engines:** remove unused db functions ([c821e93](https://github.com/DaoChaShao/py-st-run-pro/commit/c821e93ce0bb3242a80724817f591e4bf76ad64e))
+- **tools:** replace hammer exports with granular CRUD functions ([0011254](https://github.com/DaoChaShao/py-st-run-pro/commit/0011254b9f38dbcd60b887ddc48818d21435f1d6))
 - **hammer:** convert time fields to float via helper function ([38de67c](https://github.com/DaoChaShao/py-st-run-pro/commit/38de67c5bd980512562a63a62d3a740679a0b89b))
 - **prep:** rename check_delete to confirm_to_delete ([c390cae](https://github.com/DaoChaShao/py-st-run-pro/commit/c390cae03485ce8ee48ae84278e27b7f95cf27ae))
 - **hammer:** improve delete confirmation dialog wording and naming ([070c5b0](https://github.com/DaoChaShao/py-st-run-pro/commit/070c5b00395a6880edda7a40a9cbfd0d91c989ed))
