@@ -6,13 +6,9 @@
 # @File     :   engines.py
 # @Desc     :
 
-from os import remove
-from pathlib import Path
-
 from sqlalchemy import Engine, create_engine, event
 
 from ..helper import Access
-from .base import DECLARATION
 from .configs import DBConfig
 
 
@@ -49,26 +45,6 @@ class InitEngine(Access):
     def engine(self) -> Engine:
         """ Return the engine """
         return self._engine
-
-
-def create_db(engine: Engine) -> None:
-    """ Create a database """
-    DECLARATION.metadata.create_all(engine.engine)
-
-
-def drop_db(engine: Engine) -> None:
-    """ Drop a database """
-    DECLARATION.metadata.drop_all(engine.engine)
-
-
-def eliminate_db(engine: Engine, db_path: Path, *, display: bool = False) -> None:
-    """ Eliminate a database """
-    engine.dispose()
-
-    if db_path.exists():
-        remove(db_path)
-        if display:
-            print(f"Database '{db_path.name}' eliminated successfully.")
 
 
 if __name__ == "__main__":
