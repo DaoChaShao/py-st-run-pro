@@ -14,7 +14,7 @@ from streamlit import (
     sidebar,
 )
 
-from app.tools import CONFIG, SQLITE, check_delete, new_exercise
+from app.tools import CONFIG, SQLITE, confirm_to_delete, new_exercise
 from utils.dbk import (
     Exercise,
     InitEngine,
@@ -44,12 +44,13 @@ if SQLITE.exists():
         new_exercise(sqlite.engine, Exercise)
 
     if sidebar.button("Delete All Data", type="secondary", width="stretch", disabled=False):
-        check_delete(sqlite.engine, Exercise)
+        confirm_to_delete(sqlite.engine, Exercise)
 
     if sidebar.button("Drop All Tables", type="secondary", width="stretch", disabled=True):
         drop_db(sqlite.engine)
         rerun()
 
+    sidebar.divider()
     if sidebar.button("Eliminate Database", type="tertiary", width="stretch"):
         eliminate_db(sqlite.engine, SQLITE)
         rerun()
