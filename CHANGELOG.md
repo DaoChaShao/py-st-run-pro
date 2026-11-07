@@ -5,6 +5,14 @@
 
 ### Features
 
+- **dbk:** add repository utility for exercise counting ([a22d387](https://github.com/DaoChaShao/py-st-run-pro/commit/a22d387f92023d4545731427967e42ab348e06ab))
+- **preparation:** add database preparation subpage ([921363d](https://github.com/DaoChaShao/py-st-run-pro/commit/921363d963702a22b045c5876e48fc2b9b1a2d06))
+- **layout:** add app layout and sidebar navigation setup ([fadb116](https://github.com/DaoChaShao/py-st-run-pro/commit/fadb116f1a31aec02f93757734312eeb178936da))
+- **home:** add home page with project introduction sections ([4b27298](https://github.com/DaoChaShao/py-st-run-pro/commit/4b2729894724e79bc95d1554cde445eed624ab75))
+- **dbk:** expose count_exercises in public API ([7eb324f](https://github.com/DaoChaShao/py-st-run-pro/commit/7eb324f359db4eb567dae7a76758e5598ef2d04e))
+- **app:** add package initialization module for streamlit app ([e8105c7](https://github.com/DaoChaShao/py-st-run-pro/commit/e8105c74c3d312662a32d95b8daf5f1881ade875))
+- **tools:** add tools package for streamlit utilities ([096a627](https://github.com/DaoChaShao/py-st-run-pro/commit/096a627bbf75553bc1f58c62974ab14c74be9028))
+- **subpages:** add subpages package init module for Streamlit ([bff19a0](https://github.com/DaoChaShao/py-st-run-pro/commit/bff19a072d1f10ddd5af4649ab055ebffb50545c))
 - **dbk:** add SQLAlchemy session initialization utility ([be495a9](https://github.com/DaoChaShao/py-st-run-pro/commit/be495a9509acb6ff341c46d872948e6c5d9e6925))
 - **dbk:** add Exercise ORM model for tracking workouts ([7fc3399](https://github.com/DaoChaShao/py-st-run-pro/commit/7fc3399d298d0726965faa318dd2ef6bad90c35e))
 - **dbk:** implement SQLAlchemy engine initialization and database operations ([cea2f0e](https://github.com/DaoChaShao/py-st-run-pro/commit/cea2f0e8ce2e135884927f2ab296d03ec5e912d3))
@@ -38,6 +46,10 @@
 
 ### Chore
 
+- **deps:** add watchdog dependency to project ([5468938](https://github.com/DaoChaShao/py-st-run-pro/commit/5468938c112cb8856890aaacff611ab654b8a801))
+- **app:** add .gitignore for Python project files ([360b3f8](https://github.com/DaoChaShao/py-st-run-pro/commit/360b3f8b336871c7d9922fa9e3f60d4b9f962090))
+- **tools:** add .gitignore for Python project ([94bce72](https://github.com/DaoChaShao/py-st-run-pro/commit/94bce7273161e879b7b5cebddae3f5c0970b2269))
+- **subpages:** add .gitignore for Python project files ([3f1d3ae](https://github.com/DaoChaShao/py-st-run-pro/commit/3f1d3aea9112d30e061a100272ee0351b6be75ca))
 - **deps:** add sqlalchemy dependency to lock file ([abc27dc](https://github.com/DaoChaShao/py-st-run-pro/commit/abc27dc843d65fce3d6ee93882b18a5b38ccac25))
 - **deps:** add sqlalchemy dependency ([7c9af9b](https://github.com/DaoChaShao/py-st-run-pro/commit/7c9af9b68dee85154494e8e04d504daecae924c0))
 - **dbk:** add .gitignore for Python and IDE files ([dae43c0](https://github.com/DaoChaShao/py-st-run-pro/commit/dae43c0195e146fb473cb5baaa141c575fc73184))
@@ -53,6 +65,7 @@
 
 ### Docs
 
+- **changelog:** add dbk features and refactoring entries ([b253fc5](https://github.com/DaoChaShao/py-st-run-pro/commit/b253fc54e45abc762972e0cdfb7115b09225d0ce))
 - **changelog:** update CHANGELOG.md with dbk feature and refactoring entries ([ab6720a](https://github.com/DaoChaShao/py-st-run-pro/commit/ab6720a0601f26a3be833743e34ed2983892c263))
 - **changelog:** update CHANGELOG.md with dbk feature and fix entries ([1065fd7](https://github.com/DaoChaShao/py-st-run-pro/commit/1065fd7c4e31bdf61915a3f83802370a88e4f17e))
 - **changelog:** update CHANGELOG.md with new dbk entries ([7ff50fc](https://github.com/DaoChaShao/py-st-run-pro/commit/7ff50fc4b85c1520e49cc5b28367b4d4d5c3214c))
@@ -65,6 +78,7 @@
 
 ### Code Refactoring
 
+- **main:** replace DB operations with streamlit page setup ([5f203a7](https://github.com/DaoChaShao/py-st-run-pro/commit/5f203a7b4988f92bd47138b57f1bb042116f83e9))
 - **db:** migrate to ORM session-based database operations ([f0ec377](https://github.com/DaoChaShao/py-st-run-pro/commit/f0ec377c1afac3573c8234198320e363ee203608))
 - **dbk:** shorten engine and database function names ([2bd1a89](https://github.com/DaoChaShao/py-st-run-pro/commit/2bd1a895b84c136a9578fd5fccd70d0c1f626123))
 - **dbk:** move database functions after InitializeEngine class ([492e716](https://github.com/DaoChaShao/py-st-run-pro/commit/492e7166abbc5ae4538b33e9aab76cba29cfaea2))
