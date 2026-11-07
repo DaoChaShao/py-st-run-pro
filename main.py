@@ -6,9 +6,16 @@
 # @File     :   main.py
 # @Desc     :
 
+from datetime import date as date_date
+from datetime import time as date_time
 from pathlib import Path
 
-from utils.dbk import DBConfig, InitializeEngine, create_database, eliminate_database
+from utils.dbk import (
+    DBConfig,
+    Exercise,
+    InitEngine,
+    InitSession,
+)
 
 
 def main() -> None:
@@ -17,13 +24,44 @@ def main() -> None:
     # with TabularLoader(filepath, display=True) as loader:
     #     exercises: DataFrame = loader.load(file_category=TabularFormats.EXCEL)
 
-    db_path: Path = Path("data/sqlite3.db")
-    config: DBConfig = DBConfig(path=db_path)
-    sqlite = InitializeEngine(config)
+    path: Path = Path("data/sqlite3.db")
+    config: DBConfig = DBConfig(path=path)
+    sqlite = InitEngine(config)
 
-    create_database(sqlite.engine)
+    # create_db(sqlite.engine)
 
-    # eliminate_database(sqlite.engine, db_path)
+    # eliminate_db(sqlite.engine, path)
+
+    with InitSession(sqlite.engine).init() as session:
+        for _ in range(1):
+            exercise = Exercise(
+                date=date_date(2026, 9, 9),
+                time=date_time(9, 45),
+                week="Wed",
+                type="J",
+
+                slope=3,
+                duration=date_time(0, 37, 50),
+                distance=5.61,
+                active_calories=440,
+                total_calories=514,
+                avg_cadence=163,
+                avg_pace=date_time(0, 6, 44),
+                avg_heart_rate=152,
+                effort=6,
+
+                zone_i=date_time(0, 0, 42),
+                zone_ii=date_time(0, 2, 52),
+                zone_iii=date_time(0, 13, 18),
+                zone_iv=date_time(0, 21, 00),
+                zone_v=date_time(0, 0, 00),
+
+                post_heart_rate_i=159,
+                post_heart_rate_ii=143,
+                post_heart_rate_iii=136,
+            )
+            session.add(exercise)
+        session.commit()
 
 
 if __name__ == "__main__":
