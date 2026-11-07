@@ -40,21 +40,21 @@ class Exercise(DECLARATION):
 
     # Exercise Index
     slope: Mapped[float] = mapped_column(Float, nullable=True)
-    duration: Mapped[date_time] = mapped_column(Time, nullable=True)
+    duration: Mapped[float] = mapped_column(Float, nullable=True)
     distance: Mapped[float] = mapped_column(Float, nullable=False, default=5.0)
     active_calories: Mapped[float] = mapped_column(Float, nullable=True)
     total_calories: Mapped[float] = mapped_column(Float, nullable=True)
     avg_cadence: Mapped[int] = mapped_column(Integer, nullable=True)
-    avg_pace: Mapped[date_time] = mapped_column(Time, nullable=True)
+    avg_pace: Mapped[float] = mapped_column(Float, nullable=True)
     avg_heart_rate: Mapped[int] = mapped_column(Integer, nullable=True)
     effort: Mapped[int] = mapped_column(Integer, nullable=True)
 
     # Heart Rate Zones
-    zone_i: Mapped[date_time] = mapped_column(Time, nullable=True)
-    zone_ii: Mapped[date_time] = mapped_column(Time, nullable=True)
-    zone_iii: Mapped[date_time] = mapped_column(Time, nullable=True)
-    zone_iv: Mapped[date_time] = mapped_column(Time, nullable=True)
-    zone_v: Mapped[date_time] = mapped_column(Time, nullable=True)
+    zone_i: Mapped[float] = mapped_column(Float, nullable=True)
+    zone_ii: Mapped[float] = mapped_column(Float, nullable=True)
+    zone_iii: Mapped[float] = mapped_column(Float, nullable=True)
+    zone_iv: Mapped[float] = mapped_column(Float, nullable=True)
+    zone_v: Mapped[float] = mapped_column(Float, nullable=True)
 
     # Heart Rate Recovery
     post_heart_rate_i: Mapped[int] = mapped_column(Integer, nullable=True)
