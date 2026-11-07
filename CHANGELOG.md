@@ -1,10 +1,12 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-05)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-07)
 
 ### Features
 
+- **dbk:** add SQLAlchemy session initialization utility ([be495a9](https://github.com/DaoChaShao/py-st-run-pro/commit/be495a9509acb6ff341c46d872948e6c5d9e6925))
+- **dbk:** add Exercise ORM model for tracking workouts ([7fc3399](https://github.com/DaoChaShao/py-st-run-pro/commit/7fc3399d298d0726965faa318dd2ef6bad90c35e))
 - **dbk:** implement SQLAlchemy engine initialization and database operations ([cea2f0e](https://github.com/DaoChaShao/py-st-run-pro/commit/cea2f0e8ce2e135884927f2ab296d03ec5e912d3))
 - **dbk:** add DBConfig and engine utilities to public API ([bbc2ac5](https://github.com/DaoChaShao/py-st-run-pro/commit/bbc2ac5eaae80e98cbe94d3826799195be915ae5))
 - update the data ([2d0095e](https://github.com/DaoChaShao/py-st-run-pro/commit/2d0095e36f9e250fffc9162828af476a966f4deb))
@@ -51,6 +53,7 @@
 
 ### Docs
 
+- **changelog:** update CHANGELOG.md with dbk feature and refactoring entries ([ab6720a](https://github.com/DaoChaShao/py-st-run-pro/commit/ab6720a0601f26a3be833743e34ed2983892c263))
 - **changelog:** update CHANGELOG.md with dbk feature and fix entries ([1065fd7](https://github.com/DaoChaShao/py-st-run-pro/commit/1065fd7c4e31bdf61915a3f83802370a88e4f17e))
 - **changelog:** update CHANGELOG.md with new dbk entries ([7ff50fc](https://github.com/DaoChaShao/py-st-run-pro/commit/7ff50fc4b85c1520e49cc5b28367b4d4d5c3214c))
 - **changelog:** update CHANGELOG.md with new entries ([9789cfb](https://github.com/DaoChaShao/py-st-run-pro/commit/9789cfbaf2235944d9412a55a96466a84e810a83))
@@ -62,6 +65,8 @@
 
 ### Code Refactoring
 
+- **db:** migrate to ORM session-based database operations ([f0ec377](https://github.com/DaoChaShao/py-st-run-pro/commit/f0ec377c1afac3573c8234198320e363ee203608))
+- **dbk:** shorten engine and database function names ([2bd1a89](https://github.com/DaoChaShao/py-st-run-pro/commit/2bd1a895b84c136a9578fd5fccd70d0c1f626123))
 - **dbk:** move database functions after InitializeEngine class ([492e716](https://github.com/DaoChaShao/py-st-run-pro/commit/492e7166abbc5ae4538b33e9aab76cba29cfaea2))
 - **main:** switch data source to SQLite DB ([c7b7f24](https://github.com/DaoChaShao/py-st-run-pro/commit/c7b7f249c668b01d92bd3684764fe19cbcba84a5))
 - **stats:** redesign TabularLoader context manager API ([856d5c8](https://github.com/DaoChaShao/py-st-run-pro/commit/856d5c8754008e59799305689295fb1c640df468))
