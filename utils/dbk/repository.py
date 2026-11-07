@@ -4,14 +4,21 @@
 # @Author   :   Shawn
 # @Version  :   Version 0.1.0
 # @File     :   repository.py
-# @Desc     :   
+# @Desc     :
 
 from typing import Any
 
-from sqlalchemy.engine import Engine
+from pandas import DataFrame, read_sql
 from sqlalchemy.orm import Session
 from sqlalchemy.sql import func
 
 
-def count_exercises(session: Session, table: Any) -> int:
+def count_data(session: Session, table: Any) -> int:
+    """ Count the number of the table in the database """
     return session.query(func.count(table.id)).scalar()
+
+
+def get_data(session: Session, table: Any) -> DataFrame:
+    """ Get the data from the table """
+    statement = session.query(table).statement
+    return read_sql(statement, session.bind)
