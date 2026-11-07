@@ -5,6 +5,11 @@
 
 ### Features
 
+- **repository:** add get_data and generalize count function ([dcffa2e](https://github.com/DaoChaShao/py-st-run-pro/commit/dcffa2e6b497cc79e9433aa3ca080f2866ea8929))
+- **preparation:** display exercise data and refactor new exercise flow ([334331b](https://github.com/DaoChaShao/py-st-run-pro/commit/334331bed1831410a6fa859b0310ae9ac8c86e2e))
+- **dbk:** add RPE field to workload model ([ef35f36](https://github.com/DaoChaShao/py-st-run-pro/commit/ef35f36885ff78e01fe3bcb207904f510334ae3b))
+- **tools:** add exercise data input dialog in hammer tool ([495307c](https://github.com/DaoChaShao/py-st-run-pro/commit/495307c0709a88623e0fed26c6c8a427638adabe))
+- **tools:** expose new_exercise function in package API ([a98efa9](https://github.com/DaoChaShao/py-st-run-pro/commit/a98efa9896624efcfe70d4107f4924e4e29cae37))
 - **dbk:** add repository utility for exercise counting ([a22d387](https://github.com/DaoChaShao/py-st-run-pro/commit/a22d387f92023d4545731427967e42ab348e06ab))
 - **preparation:** add database preparation subpage ([921363d](https://github.com/DaoChaShao/py-st-run-pro/commit/921363d963702a22b045c5876e48fc2b9b1a2d06))
 - **layout:** add app layout and sidebar navigation setup ([fadb116](https://github.com/DaoChaShao/py-st-run-pro/commit/fadb116f1a31aec02f93757734312eeb178936da))
@@ -46,6 +51,7 @@
 
 ### Chore
 
+- **deps:** add watchdog dependency to lock file ([81e85e5](https://github.com/DaoChaShao/py-st-run-pro/commit/81e85e5fedd9a7265db8453e5021514e4c860e13))
 - **deps:** add watchdog dependency to project ([5468938](https://github.com/DaoChaShao/py-st-run-pro/commit/5468938c112cb8856890aaacff611ab654b8a801))
 - **app:** add .gitignore for Python project files ([360b3f8](https://github.com/DaoChaShao/py-st-run-pro/commit/360b3f8b336871c7d9922fa9e3f60d4b9f962090))
 - **tools:** add .gitignore for Python project ([94bce72](https://github.com/DaoChaShao/py-st-run-pro/commit/94bce7273161e879b7b5cebddae3f5c0970b2269))
@@ -65,6 +71,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
 - **changelog:** add dbk features and refactoring entries ([b253fc5](https://github.com/DaoChaShao/py-st-run-pro/commit/b253fc54e45abc762972e0cdfb7115b09225d0ce))
 - **changelog:** update CHANGELOG.md with dbk feature and refactoring entries ([ab6720a](https://github.com/DaoChaShao/py-st-run-pro/commit/ab6720a0601f26a3be833743e34ed2983892c263))
 - **changelog:** update CHANGELOG.md with dbk feature and fix entries ([1065fd7](https://github.com/DaoChaShao/py-st-run-pro/commit/1065fd7c4e31bdf61915a3f83802370a88e4f17e))
@@ -78,6 +85,7 @@
 
 ### Code Refactoring
 
+- **dbk:** update public API exports ([263d794](https://github.com/DaoChaShao/py-st-run-pro/commit/263d79432c38ee3860e63cbdd613160d8d0b8c99))
 - **main:** replace DB operations with streamlit page setup ([5f203a7](https://github.com/DaoChaShao/py-st-run-pro/commit/5f203a7b4988f92bd47138b57f1bb042116f83e9))
 - **db:** migrate to ORM session-based database operations ([f0ec377](https://github.com/DaoChaShao/py-st-run-pro/commit/f0ec377c1afac3573c8234198320e363ee203608))
 - **dbk:** shorten engine and database function names ([2bd1a89](https://github.com/DaoChaShao/py-st-run-pro/commit/2bd1a895b84c136a9578fd5fccd70d0c1f626123))
