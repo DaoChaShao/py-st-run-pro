@@ -75,6 +75,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with recent entries ([026000a](https://github.com/DaoChaShao/py-st-run-pro/commit/026000ae22dd7e8216ab9f0553de1608064acfe5))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
 - **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
 - **changelog:** add dbk features and refactoring entries ([b253fc5](https://github.com/DaoChaShao/py-st-run-pro/commit/b253fc54e45abc762972e0cdfb7115b09225d0ce))
@@ -90,6 +91,9 @@
 
 ### Code Refactoring
 
+- **prep:** rename check_delete to confirm_to_delete ([c390cae](https://github.com/DaoChaShao/py-st-run-pro/commit/c390cae03485ce8ee48ae84278e27b7f95cf27ae))
+- **hammer:** improve delete confirmation dialog wording and naming ([070c5b0](https://github.com/DaoChaShao/py-st-run-pro/commit/070c5b00395a6880edda7a40a9cbfd0d91c989ed))
+- **tools:** rename check_delete to confirm_to_delete ([e44b280](https://github.com/DaoChaShao/py-st-run-pro/commit/e44b28040e2d3abccff37bba3f1b4ed13516e4ea))
 - **preparation:** extract db config to shared tools module ([fd66b71](https://github.com/DaoChaShao/py-st-run-pro/commit/fd66b71fdc8e594b67392224a3e486623127f327))
 - **dbk:** update public API exports ([263d794](https://github.com/DaoChaShao/py-st-run-pro/commit/263d79432c38ee3860e63cbdd613160d8d0b8c99))
 - **main:** replace DB operations with streamlit page setup ([5f203a7](https://github.com/DaoChaShao/py-st-run-pro/commit/5f203a7b4988f92bd47138b57f1bb042116f83e9))
