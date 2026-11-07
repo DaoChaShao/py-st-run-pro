@@ -17,9 +17,12 @@ A collection of utility tools designed for Streamlit page initialisation and cor
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
+from .hammer import new_exercise
 from .layout import config_page, set_pages
 
 __all__ = [
+    "new_exercise",
+
     "config_page",
     "set_pages",
 ]
