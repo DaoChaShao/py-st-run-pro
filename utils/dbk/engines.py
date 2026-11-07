@@ -16,7 +16,7 @@ from .base import DECLARATION
 from .configs import DBConfig
 
 
-class InitializeEngine(Access):
+class InitEngine(Access):
     """ Initialise Engine with SQLAlchemy """
 
     def __init__(self, config: DBConfig) -> None:
@@ -51,17 +51,17 @@ class InitializeEngine(Access):
         return self._engine
 
 
-def create_database(engine: Engine) -> None:
+def create_db(engine: Engine) -> None:
     """ Create a database """
     DECLARATION.metadata.create_all(engine.engine)
 
 
-def drop_database(engine: Engine) -> None:
+def drop_db(engine: Engine) -> None:
     """ Drop a database """
     DECLARATION.metadata.drop_all(engine.engine)
 
 
-def eliminate_database(engine: Engine, db_path: Path, *, display: bool = False) -> None:
+def eliminate_db(engine: Engine, db_path: Path, *, display: bool = False) -> None:
     """ Eliminate a database """
     engine.dispose()
 
