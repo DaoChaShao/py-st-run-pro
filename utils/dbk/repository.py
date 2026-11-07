@@ -18,6 +18,12 @@ def count_data(session: Session, table: Any) -> int:
     return session.query(func.count(table.id)).scalar()
 
 
+def delete_data(session: Session, table: Any) -> None:
+    """ Delete the data in the table """
+    session.query(table).delete()
+    session.commit()
+
+
 def get_data(session: Session, table: Any) -> DataFrame:
     """ Get the data from the table """
     statement = session.query(table).statement
