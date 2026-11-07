@@ -17,13 +17,13 @@ A collection of utility tools designed for Streamlit page initialisation and cor
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
-from .hammer import CONFIG, SQLITE, check_delete, new_exercise
+from .hammer import CONFIG, SQLITE, confirm_to_delete, new_exercise
 from .layout import config_page, set_pages
 
 __all__ = [
     "CONFIG",
     "SQLITE",
-    "check_delete",
+    "confirm_to_delete",
     "new_exercise",
 
     "config_page",
