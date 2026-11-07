@@ -26,20 +26,26 @@ from .base import DECLARATION
 from .configs import DBConfig
 from .constants import SQLITE
 from .engines import (
-    InitializeEngine,
-    create_database,
-    drop_database,
-    eliminate_database,
+    InitEngine,
+    create_db,
+    drop_db,
+    eliminate_db,
 )
+from .models import Exercise
+from .session import InitSession
 
 __all__ = [
     "DECLARATION",
 
     "DBConfig",
 
-    "InitializeEngine",
-    "create_database",
-    "drop_database", "eliminate_database",
-
     "SQLITE",
+
+    "InitEngine",
+    "create_db",
+    "drop_db", "eliminate_db",
+
+    "Exercise",
+
+    "InitSession",
 ]
