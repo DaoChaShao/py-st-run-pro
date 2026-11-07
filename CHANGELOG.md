@@ -5,6 +5,10 @@
 
 ### Features
 
+- **repository:** add delete_data function for table operations ([dcab7cf](https://github.com/DaoChaShao/py-st-run-pro/commit/dcab7cf4ea3092a17b7ff8477693f4f40faf74d0))
+- **hammer:** add delete confirmation dialog and time step input ([e1d577f](https://github.com/DaoChaShao/py-st-run-pro/commit/e1d577f8ef65c9f244824843320fe03e901698cc))
+- **dbk:** expose delete_data in package public API ([b4174a6](https://github.com/DaoChaShao/py-st-run-pro/commit/b4174a6e588782ad44bc206d1f132eb86d2e6e42))
+- **tools:** expose additional hammer symbols in module exports ([aa812c9](https://github.com/DaoChaShao/py-st-run-pro/commit/aa812c9142843e8b0bac0ef73329171bc865e586))
 - **repository:** add get_data and generalize count function ([dcffa2e](https://github.com/DaoChaShao/py-st-run-pro/commit/dcffa2e6b497cc79e9433aa3ca080f2866ea8929))
 - **preparation:** display exercise data and refactor new exercise flow ([334331b](https://github.com/DaoChaShao/py-st-run-pro/commit/334331bed1831410a6fa859b0310ae9ac8c86e2e))
 - **dbk:** add RPE field to workload model ([ef35f36](https://github.com/DaoChaShao/py-st-run-pro/commit/ef35f36885ff78e01fe3bcb207904f510334ae3b))
@@ -71,6 +75,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
 - **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
 - **changelog:** add dbk features and refactoring entries ([b253fc5](https://github.com/DaoChaShao/py-st-run-pro/commit/b253fc54e45abc762972e0cdfb7115b09225d0ce))
 - **changelog:** update CHANGELOG.md with dbk feature and refactoring entries ([ab6720a](https://github.com/DaoChaShao/py-st-run-pro/commit/ab6720a0601f26a3be833743e34ed2983892c263))
@@ -85,6 +90,7 @@
 
 ### Code Refactoring
 
+- **preparation:** extract db config to shared tools module ([fd66b71](https://github.com/DaoChaShao/py-st-run-pro/commit/fd66b71fdc8e594b67392224a3e486623127f327))
 - **dbk:** update public API exports ([263d794](https://github.com/DaoChaShao/py-st-run-pro/commit/263d79432c38ee3860e63cbdd613160d8d0b8c99))
 - **main:** replace DB operations with streamlit page setup ([5f203a7](https://github.com/DaoChaShao/py-st-run-pro/commit/5f203a7b4988f92bd47138b57f1bb042116f83e9))
 - **db:** migrate to ORM session-based database operations ([f0ec377](https://github.com/DaoChaShao/py-st-run-pro/commit/f0ec377c1afac3573c8234198320e363ee203608))
