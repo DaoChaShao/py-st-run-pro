@@ -50,6 +50,7 @@
 
 ### Bug Fixes
 
+- **dbk:** correct column type mappings in exercise index model ([2db1e60](https://github.com/DaoChaShao/py-st-run-pro/commit/2db1e606d22d25f48f80ab71028b568f88719079))
 - **dbk:** rename sqlite db file to sqlite3.db ([98f464a](https://github.com/DaoChaShao/py-st-run-pro/commit/98f464a7a5f067e063c25625b5aa9168dcb2aabe))
 - **dbk:** resolve relative path in SQLite connection URL ([8cd3135](https://github.com/DaoChaShao/py-st-run-pro/commit/8cd31359a4efcf99ba5a09776d647483edbd11d5))
 
@@ -75,7 +76,7 @@
 
 ### Docs
 
-- **changelog:** update changelog with recent entries ([026000a](https://github.com/DaoChaShao/py-st-run-pro/commit/026000ae22dd7e8216ab9f0553de1608064acfe5))
+- **changelog:** update changelog with recent entries ([bf48fda](https://github.com/DaoChaShao/py-st-run-pro/commit/bf48fda333c4d0e4a5aa056cb0f26e2394efd045))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
 - **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
 - **changelog:** add dbk features and refactoring entries ([b253fc5](https://github.com/DaoChaShao/py-st-run-pro/commit/b253fc54e45abc762972e0cdfb7115b09225d0ce))
@@ -91,6 +92,7 @@
 
 ### Code Refactoring
 
+- **hammer:** convert time fields to float via helper function ([38de67c](https://github.com/DaoChaShao/py-st-run-pro/commit/38de67c5bd980512562a63a62d3a740679a0b89b))
 - **prep:** rename check_delete to confirm_to_delete ([c390cae](https://github.com/DaoChaShao/py-st-run-pro/commit/c390cae03485ce8ee48ae84278e27b7f95cf27ae))
 - **hammer:** improve delete confirmation dialog wording and naming ([070c5b0](https://github.com/DaoChaShao/py-st-run-pro/commit/070c5b00395a6880edda7a40a9cbfd0d91c989ed))
 - **tools:** rename check_delete to confirm_to_delete ([e44b280](https://github.com/DaoChaShao/py-st-run-pro/commit/e44b28040e2d3abccff37bba3f1b4ed13516e4ea))
