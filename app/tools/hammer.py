@@ -8,6 +8,8 @@
 
 from datetime import date as date_date
 from datetime import time as date_time
+from datetime import timedelta
+from pathlib import Path
 from typing import Any
 
 from sqlalchemy.engine import Engine
@@ -26,11 +28,34 @@ from streamlit import (
     time_input,
 )
 
-from utils.dbk import InitSession
+from utils.dbk import DBConfig, InitSession
+
+BASE = Path(__file__).resolve().parents[2]
+SQLITE: Path = BASE / "data/sqlite3.db"
+CONFIG: DBConfig = DBConfig(path=SQLITE)
+
+
+@dialog("Warning", width="small", position="center")
+def check_delete(engine: Engine, table: Any) -> None:
+    """ Confirm whether to delete all exercise """
+    caption("Confirm whether to delete all exercises")
+
+    left, right = columns(2)
+    with left:
+        if button("Yes", type="secondary", width="stretch"):
+            with InitSession(engine).init() as session:
+                session.query(table).delete()
+                session.commit()
+            balloons()
+            rerun()
+    with right:
+        if button("No", type="primary", width="stretch"):
+            rerun()
 
 
 @dialog("Cast your exercise", width="medium", position="center")
-def new_exercise(engine: Engine, table: Any):
+def new_exercise(engine: Engine, table: Any) -> None:
+    """ Add a new exercise """
     caption("Basic Information:")
     left, mid, right = columns(3)
     with left:
@@ -40,7 +65,7 @@ def new_exercise(engine: Engine, table: Any):
         )
     with mid:
         time: date_time = time_input(
-            "Exercise Time", value=date_time.min,
+            "Exercise Time", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise time."
         )
     with right:
@@ -61,7 +86,7 @@ def new_exercise(engine: Engine, table: Any):
             width="stretch", help="Select the exercise slope."
         )
         duration: date_time = time_input(
-            "Exercise Duration", value=date_time.min,
+            "Exercise Duration", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise duration."
         )
         distance: float = number_input(
@@ -81,7 +106,7 @@ def new_exercise(engine: Engine, table: Any):
             width="stretch", help="Select the exercise average cadence."
         )
         avg_pace: date_time = time_input(
-            "Exercise Average Pace", value=date_time.min,
+            "Exercise Average Pace", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise average pace."
         )
         avg_heart_rate: int = slider(
@@ -95,23 +120,23 @@ def new_exercise(engine: Engine, table: Any):
 
     with details:
         zone_i: date_time = time_input(
-            "Heart Rate Zone I", value=date_time.min,
+            "Heart Rate Zone I", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone I."
         )
         zone_ii: date_time = time_input(
-            "Heart Rate Zone II", value=date_time.min,
+            "Heart Rate Zone II", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone II."
         )
         zone_iii: date_time = time_input(
-            "Heart Rate Zone III", value=date_time.min,
+            "Heart Rate Zone III", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone III."
         )
         zone_iv: date_time = time_input(
-            "Heart Rate Zone IV", value=date_time.min,
+            "Heart Rate Zone IV", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone IV."
         )
         zone_v: date_time = time_input(
-            "Heart Rate Zone V", value=date_time.min,
+            "Heart Rate Zone V", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone V."
         )
         post_heart_rate_i: int = slider(
