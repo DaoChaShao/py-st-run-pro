@@ -35,10 +35,10 @@ SQLITE: Path = BASE / "data/sqlite3.db"
 CONFIG: DBConfig = DBConfig(path=SQLITE)
 
 
-@dialog("Warning", width="small", position="center")
-def check_delete(engine: Engine, table: Any) -> None:
+@dialog("Confirmation Required", width="small", position="center")
+def confirm_to_delete(engine: Engine, table: Any) -> None:
     """ Confirm whether to delete all exercise """
-    caption("Confirm whether to delete all exercises")
+    caption("Would you like to delete all exercise data?")
 
     left, right = columns(2)
     with left:
