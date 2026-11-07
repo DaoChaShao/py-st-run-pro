@@ -64,6 +64,9 @@ class Exercise(DECLARATION):
     # Body Weight
     weight: Mapped[float] = mapped_column(Float, nullable=True)
 
+    # ACWR (Acute-Chronic Workload Ratio) - RPE (Rate of Perceived Exertion): Training Intensity
+    rpe: Mapped[int] = mapped_column(Integer, nullable=True)
+
     create_date: Mapped[GEN.CT]
     update_date: Mapped[GEN.UT]
 
@@ -87,5 +90,6 @@ class Exercise(DECLARATION):
             f"post_heart_rate_ii={self.post_heart_rate_ii}, "
             f"post_heart_rate_iii={self.post_heart_rate_iii}, "
             f"weight={self.weight}, "
-            f"create_date={self.create_date}, update_date={self.update_date}>"
+            f"create_date={self.create_date}, update_date={self.update_date}, "
+            f"rpe={self.rpe}>"
         )
