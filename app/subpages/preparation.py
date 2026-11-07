@@ -6,7 +6,6 @@
 # @File     :   preparation.py
 # @Desc     :
 
-from pathlib import Path
 
 from streamlit import (
     data_editor,
@@ -15,9 +14,8 @@ from streamlit import (
     sidebar,
 )
 
-from app.tools import new_exercise
+from app.tools import CONFIG, SQLITE, check_delete, new_exercise
 from utils.dbk import (
-    DBConfig,
     Exercise,
     InitEngine,
     InitSession,
@@ -30,10 +28,7 @@ from utils.dbk import (
 
 MESSAGES = empty()
 
-BASE = Path(__file__).resolve().parents[2]
-SQLITE: Path = BASE / "data/sqlite3.db"
-config: DBConfig = DBConfig(path=SQLITE)
-sqlite = InitEngine(config)
+sqlite = InitEngine(CONFIG)
 
 if SQLITE.exists():
     with InitSession(sqlite.engine).init() as session:
@@ -47,6 +42,9 @@ if SQLITE.exists():
 
     if sidebar.button("New Exercise", type="primary", width="stretch"):
         new_exercise(sqlite.engine, Exercise)
+
+    if sidebar.button("Delete All Data", type="secondary", width="stretch", disabled=False):
+        check_delete(sqlite.engine, Exercise)
 
     if sidebar.button("Drop All Tables", type="secondary", width="stretch", disabled=True):
         drop_db(sqlite.engine)
