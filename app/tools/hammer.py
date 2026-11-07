@@ -89,6 +89,7 @@ def new_exercise(engine: Engine, table: Any) -> None:
             "Exercise Duration", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise duration."
         )
+        duration: float = transform_time_to_minutes(duration)
         distance: float = number_input(
             "Exercise Distance", min_value=0.0, max_value=50.0, value=5.00, step=0.01,
             width="stretch", help="Select the exercise distance."
@@ -105,8 +106,8 @@ def new_exercise(engine: Engine, table: Any) -> None:
             "Exercise Average Cadence", min_value=0, max_value=200, step=1,
             width="stretch", help="Select the exercise average cadence."
         )
-        avg_pace: date_time = time_input(
-            "Exercise Average Pace", value=date_time.min, step=timedelta(seconds=1),
+        avg_pace: float = number_input(
+            "Exercise Average Pace", min_value=0.0, max_value=50.0, step=0.01,
             width="stretch", help="Select the exercise average pace."
         )
         avg_heart_rate: int = slider(
@@ -123,22 +124,27 @@ def new_exercise(engine: Engine, table: Any) -> None:
             "Heart Rate Zone I", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone I."
         )
+        zone_i: float = transform_time_to_minutes(zone_i)
         zone_ii: date_time = time_input(
             "Heart Rate Zone II", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone II."
         )
+        zone_ii: float = transform_time_to_minutes(zone_ii)
         zone_iii: date_time = time_input(
             "Heart Rate Zone III", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone III."
         )
+        zone_iii: float = transform_time_to_minutes(zone_iii)
         zone_iv: date_time = time_input(
             "Heart Rate Zone IV", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone IV."
         )
+        zone_iv: float = transform_time_to_minutes(zone_iv)
         zone_v: date_time = time_input(
             "Heart Rate Zone V", value=date_time.min, step=timedelta(seconds=1),
             width="stretch", help="Select the exercise zone V."
         )
+        zone_v: float = transform_time_to_minutes(zone_v)
         post_heart_rate_i: int = slider(
             "Post-Exercise Heart Rate I", min_value=0, max_value=200, step=1,
             width="stretch", help="Select the post-exercise heart rate Immediately."
@@ -197,3 +203,8 @@ def new_exercise(engine: Engine, table: Any) -> None:
 
         balloons()
         rerun()
+
+
+def transform_time_to_minutes(t: date_time) -> float:
+    """ Transform time to minutes """
+    return t.hour * 60.0 + t.minute + t.second / 60.0
