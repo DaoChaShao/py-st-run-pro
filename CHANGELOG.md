@@ -5,6 +5,9 @@
 
 ### Features
 
+- **preparation:** add load default data button ([653f7b5](https://github.com/DaoChaShao/py-st-run-pro/commit/653f7b5ce8bda7d2ce3d25a5148c1e65382d8107))
+- **hammer:** add loader and rename calorie fields ([14f60c5](https://github.com/DaoChaShao/py-st-run-pro/commit/14f60c51e1d870e6cd2f70b12963c04eda05f2c4))
+- **tools:** expose load_default_data function ([15199c4](https://github.com/DaoChaShao/py-st-run-pro/commit/15199c41f1eb4ff6c54e9fdd243c4c3e705b2300))
 - **repository:** add database lifecycle management functions ([6fa3f62](https://github.com/DaoChaShao/py-st-run-pro/commit/6fa3f6250c6ccbbfb038a01ee71f538dca4ef610))
 - **preparation:** add row selection and CRUD actions ([284fc9a](https://github.com/DaoChaShao/py-st-run-pro/commit/284fc9a7a32138c2ec15554a1317b659e2118536))
 - **hammer:** add CRUD dialogs for exercise data management ([6a289d7](https://github.com/DaoChaShao/py-st-run-pro/commit/6a289d764909578ad2a3943e91ea0d98e8082498))
@@ -79,6 +82,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with new features and refactors ([ca6442f](https://github.com/DaoChaShao/py-st-run-pro/commit/ca6442f40ac7e96c302d71434395620a1e6091ef))
 - **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
 - **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
@@ -95,6 +99,7 @@
 
 ### Code Refactoring
 
+- **dbk:** change date field type and rename calorie columns ([20dfedd](https://github.com/DaoChaShao/py-st-run-pro/commit/20dfeddfabd75c0ac51b194fda401ead3c5e373e))
 - **engines:** remove unused db functions ([c821e93](https://github.com/DaoChaShao/py-st-run-pro/commit/c821e93ce0bb3242a80724817f591e4bf76ad64e))
 - **tools:** replace hammer exports with granular CRUD functions ([0011254](https://github.com/DaoChaShao/py-st-run-pro/commit/0011254b9f38dbcd60b887ddc48818d21435f1d6))
 - **hammer:** convert time fields to float via helper function ([38de67c](https://github.com/DaoChaShao/py-st-run-pro/commit/38de67c5bd980512562a63a62d3a740679a0b89b))
