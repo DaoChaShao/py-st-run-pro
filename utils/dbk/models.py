@@ -6,12 +6,11 @@
 # @File     :   models.py
 # @Desc     :
 
-from datetime import date as date_date
 from datetime import datetime
 from datetime import time as date_time
 from typing import Annotated
 
-from sqlalchemy import Date, DateTime, Float, Integer, String, Time
+from sqlalchemy import DateTime, Float, Integer, String, Time
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
 
@@ -33,7 +32,7 @@ class Exercise(DECLARATION):
     id: Mapped[GEN.PK]
 
     # Exercise Date and time
-    date: Mapped[date_date] = mapped_column(Date, nullable=False)
+    date: Mapped[datetime] = mapped_column(DateTime, nullable=False)
     time: Mapped[date_time] = mapped_column(Time, nullable=False)
     week: Mapped[str] = mapped_column(String(10), nullable=False)
     type: Mapped[str] = mapped_column(String(10), nullable=False, default="J")
@@ -42,8 +41,8 @@ class Exercise(DECLARATION):
     slope: Mapped[float] = mapped_column(Float, nullable=True)
     duration: Mapped[float] = mapped_column(Float, nullable=True)
     distance: Mapped[float] = mapped_column(Float, nullable=False, default=5.0)
-    active_calories: Mapped[float] = mapped_column(Float, nullable=True)
-    total_calories: Mapped[float] = mapped_column(Float, nullable=True)
+    active_kilocalories: Mapped[float] = mapped_column(Float, nullable=True)
+    total_kilocalories: Mapped[float] = mapped_column(Float, nullable=True)
     avg_cadence: Mapped[int] = mapped_column(Integer, nullable=True)
     avg_pace: Mapped[float] = mapped_column(Float, nullable=True)
     avg_heart_rate: Mapped[int] = mapped_column(Integer, nullable=True)
@@ -78,7 +77,7 @@ class Exercise(DECLARATION):
             f"date={self.date}, time={self.time}, week={self.week}, "
             f"type={self.type}, "
             f"slope={self.slope}, duration={self.duration}, distance={self.distance}, "
-            f"active_calories={self.active_calories}, total_calories={self.total_calories}, "
+            f"active_kilocalories={self.active_kilocalories}, total_kilocalories={self.total_kilocalories}, "
             f"avg_cadence={self.avg_cadence}, avg_pace={self.avg_pace}, avg_heart_rate={self.avg_heart_rate}, "
             f"effort={self.effort}, "
             f"zone_i={self.zone_i}, "
