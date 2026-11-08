@@ -13,6 +13,7 @@ from os import remove
 from pathlib import Path
 from typing import Any
 
+from pandas import DataFrame
 from sqlalchemy.engine import Engine
 from streamlit import (
     button,
@@ -30,9 +31,11 @@ from streamlit import (
 )
 
 from utils.dbk import DECLARATION, DBConfig, InitSession
+from utils.stats import TabularFormats, TabularLoader
 
 BASE = Path(__file__).resolve().parents[2]
 SQLITE: Path = BASE / "data/sqlite3.db"
+EXCEL: Path = BASE / "data/exercise.xlsx"
 CONFIG: DBConfig = DBConfig(path=SQLITE)
 
 
@@ -82,11 +85,11 @@ def create_data(engine: Engine, table: Any) -> None:
             "Exercise Distance", min_value=0.0, max_value=50.0, step=0.01, value=5.00,
             width="stretch", help="Select the exercise distance."
         )
-        active_calories: float = number_input(
+        active_kilocalories: float = number_input(
             "Exercise Active Calories", min_value=0.0, max_value=1000.0, step=1.0,
             width="stretch", help="Select the exercise active calories."
         )
-        total_calories: float = number_input(
+        total_kilocalories: float = number_input(
             "Exercise Total Calories", min_value=0.0, max_value=1000.0, step=1.0,
             width="stretch", help="Select the exercise total calories."
         )
@@ -160,8 +163,8 @@ def create_data(engine: Engine, table: Any) -> None:
                 slope=slope,
                 duration=duration,
                 distance=distance,
-                active_calories=active_calories,
-                total_calories=total_calories,
+                active_kilocalories=active_kilocalories,
+                total_kilocalories=total_kilocalories,
                 avg_cadence=avg_cadence,
                 avg_pace=avg_pace,
                 avg_heart_rate=avg_heart_rate,
@@ -279,6 +282,57 @@ def delete_selected_data(engine: Engine, table: Any, db_idx: int) -> None:
             rerun()
 
 
+@dialog("Load default data", width="small", position="center")
+def load_default_data(engine: Engine, table: Any) -> None:
+    """
+    Load default data into the database
+
+    :param engine: The database engine
+    :param table: The table object
+    :return: None
+    """
+    caption("Would you like to load default data from the current Excel?")
+
+    left, right = columns(2)
+    with left:
+        if button("Yes", type="secondary", width="stretch"):
+            with TabularLoader(EXCEL, display=True) as loader:
+                exercises: DataFrame = loader.load(file_category=TabularFormats.EXCEL)
+                # print(exercises)
+                with InitSession(engine).init() as session:
+                    for _, row in exercises.iterrows():
+                        new_record = table(
+                            date=row.get("date"),
+                            time=row.get("time"),
+                            week=row.get("week"),
+                            type=row.get("type"),
+                            slope=row.get("slope"),
+                            duration=row.get("duration"),
+                            distance=row.get("distance"),
+                            active_kilocalories=row.get("active_kilocalories"),
+                            total_kilocalories=row.get("total_kilocalories"),
+                            avg_cadence=row.get("avg_cadence"),
+                            avg_pace=row.get("avg_pace"),
+                            avg_heart_rate=row.get("avg_heart_rate"),
+                            effort=row.get("effort"),
+                            zone_i=row.get("zone_i"),
+                            zone_ii=row.get("zone_ii"),
+                            zone_iii=row.get("zone_iii"),
+                            zone_iv=row.get("zone_iv"),
+                            zone_v=row.get("zone_v"),
+                            post_heart_rate_i=row.get("post_heart_rate_i"),
+                            post_heart_rate_ii=row.get("post_heart_rate_ii"),
+                            post_heart_rate_iii=row.get("post_heart_rate_iii"),
+                            weight=row.get("weight"),
+                        )
+                        session.add(new_record)
+                    session.commit()
+            rerun()
+    with right:
+        if button("No", type="primary", width="stretch"):
+            rerun()
+
+
 @dialog("Update the data", width="medium", position="center")
 def update_data(engine: Engine, table: Any, db_idx: int) -> None:
     """
@@ -343,11 +397,11 @@ def update_data(engine: Engine, table: Any, db_idx: int) -> None:
                 "Exercise Distance", min_value=0.0, max_value=50.0, step=0.01, value=record.distance,
                 width="stretch", help="Select the exercise distance."
             )
-            active_calories: float = number_input(
+            active_kilocalories: float = number_input(
                 "Exercise Active Calories", min_value=0.0, max_value=1000.0, step=1.0, value=record.active_calories,
                 width="stretch", help="Select the exercise active calories."
             )
-            total_calories: float = number_input(
+            total_kilocalories: float = number_input(
                 "Exercise Total Calories", min_value=0.0, max_value=1000.0, step=1.0, value=record.total_calories,
                 width="stretch", help="Select the exercise total calories."
             )
@@ -422,8 +476,8 @@ def update_data(engine: Engine, table: Any, db_idx: int) -> None:
                 record.slope = slope
                 record.duration = duration
                 record.distance = distance
-                record.active_calories = active_calories
-                record.total_calories = total_calories
+                record.active_kilocalories = active_kilocalories
+                record.total_kilocalories = total_kilocalories
                 record.avg_cadence = avg_cadence
                 record.avg_pace = avg_pace
                 record.avg_heart_rate = avg_heart_rate
