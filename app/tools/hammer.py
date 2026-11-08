@@ -26,17 +26,66 @@ from streamlit import (
     rerun,
     segmented_control,
     selectbox,
+    sidebar,
     slider,
     time_input,
 )
 
-from utils.dbk import DECLARATION, DBConfig, InitSession
+from utils.dbk import (
+    DECLARATION,
+    DBConfig,
+    InitSession,
+    check_table_exists,
+    create_db,
+)
 from utils.stats import TabularFormats, TabularLoader
 
 BASE = Path(__file__).resolve().parents[2]
 SQLITE: Path = BASE / "data/sqlite3.db"
 EXCEL: Path = BASE / "data/exercise.xlsx"
 CONFIG: DBConfig = DBConfig(path=SQLITE)
+
+
+def check_db_status_with_init(filepath: Path, engine: Engine, table: str, notification: Any) -> bool:
+    """
+    Check the status of the database
+
+    :param filepath: The path to the database file
+    :param engine: The database engine
+    :param table: The name of the table
+    :param notification: The notification object
+    :return: True if the database is ready, otherwise False
+    """
+    if not filepath.exists():
+        notification.error("SQLite database not found.")
+        if sidebar.button("Initialise Database", type="primary", width="stretch"):
+            create_db(engine)
+            rerun()
+        return False
+
+    elif not check_table_exists(engine, table):
+        notification.warning("SQLite database found, but table not found.")
+        if sidebar.button("Initialise Database", type="primary", width="stretch"):
+            create_db(engine)
+            rerun()
+        return False
+    return True
+
+
+def check_db_status_with_stop(filepath: Path, engine: Engine, table: str, notification: Any) -> bool:
+    """
+    Check the status of the database with stop
+
+    :param filepath: The path to the database file
+    :param engine: The database engine
+    :param table: The name of the table
+    :param notification: The notification object
+    :return: True if the database is ready, otherwise False
+    """
+    if not filepath.exists() or not check_table_exists(engine, table):
+        notification.error("Database or table not found. Please initialize it in the preparation page.")
+        return False
+    return True
 
 
 @dialog("Create a new data", width="medium", position="center")
@@ -343,14 +392,14 @@ def update_data(engine: Engine, table: Any, db_idx: int) -> None:
     :param db_idx: The database index
     :return: None
     """
-    messages = empty()
+    notification = empty()
 
     with InitSession(engine).init() as session:
         record = session.query(table).filter(table.id == db_idx).first()
         print(record)
 
         if not record:
-            messages.error("The record you are looking for does not exist.")
+            notification.error("The record you are looking for does not exist.")
             return
 
         caption("Basic Information:")
