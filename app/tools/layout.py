@@ -29,19 +29,19 @@ def set_pages() -> None:
         "page": [
             "app/subpages/home.py",
             "app/subpages/preparation.py",
-            # "app/subpages/monitor.py",
+            "app/subpages/presentation.py",
             # "app/subpages/prescription.py"
         ],
         "title": [
             "Home",
-            "Database Preparation",
-            # "Load & Fatigue Monitoring",
+            "Data Preparation",
+            "Data Presentation & Trend",
             # "AI-Driven Training Load Prescription"
         ],
         "icon": [
             ":material/home:",
+            ":material/database:",
             ":material/dashboard:",
-            # ":material/dashboard_2_gear:",
             # ":material/browse_activity:",
             # ":material/clinical_notes:"
         ],
@@ -53,7 +53,7 @@ def set_pages() -> None:
         ],
         "Core Functions": [
             Page(page=pages["page"][1], title=pages["title"][1], icon=pages["icon"][1]),
-            # Page(page=pages["page"][2], title=pages["title"][2], icon=pages["icon"][2]),
+            Page(page=pages["page"][2], title=pages["title"][2], icon=pages["icon"][2]),
             # Page(page=pages["page"][3], title=pages["title"][3], icon=pages["icon"][3]),
             # Page(page=pages["page"][4], title=pages["title"][4], icon=pages["icon"][4]),
         ],
