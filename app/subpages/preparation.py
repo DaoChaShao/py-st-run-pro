@@ -22,6 +22,7 @@ from app.tools import (
     delete_all_tables,
     delete_db,
     delete_selected_data,
+    load_default_data,
     update_data,
 )
 from utils.dbk import (
@@ -61,7 +62,7 @@ else:
             exercises: DataFrame = get_data(session, Exercise)
             selection = dataframe(
                 exercises,
-                hide_index=True, width="stretch",
+                hide_index=True, width="stretch", height=700,
                 selection_mode="single-row",
                 on_select="rerun",
             )
@@ -85,11 +86,14 @@ else:
     if sidebar.button("New Exercise", type="primary", width="stretch"):
         create_data(sqlite.engine, Exercise)
 
-    if sidebar.button("Delete All Data", type="secondary", width="stretch", disabled=False):
+    if sidebar.button("Delete All Exercises", type="secondary", width="stretch", disabled=False):
         delete_all_data(sqlite.engine, Exercise)
 
     if sidebar.button("Drop All Tables", type="secondary", width="stretch", disabled=False):
         delete_all_tables(sqlite.engine)
+
+    if sidebar.button("Load Default Data", type="primary", width="stretch"):
+        load_default_data(sqlite.engine, Exercise)
 
     sidebar.divider()
     if sidebar.button("Eliminate Database", type="tertiary", width="stretch"):
