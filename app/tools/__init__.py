@@ -25,6 +25,7 @@ from .hammer import (
     delete_all_tables,
     delete_db,
     delete_selected_data,
+    load_default_data,
     update_data,
 )
 from .layout import config_page, set_pages
@@ -37,6 +38,7 @@ __all__ = [
     "delete_all_tables",
     "delete_db",
     "delete_selected_data",
+    "load_default_data",
     "update_data",
 
     "config_page",
