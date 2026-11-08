@@ -20,6 +20,8 @@ __version__ = "0.1.0"
 from .hammer import (
     CONFIG,
     SQLITE,
+    check_db_status_with_init,
+    check_db_status_with_stop,
     create_data,
     delete_all_data,
     delete_all_tables,
@@ -33,6 +35,8 @@ from .layout import config_page, set_pages
 __all__ = [
     "CONFIG",
     "SQLITE",
+    "check_db_status_with_init",
+    "check_db_status_with_stop",
     "create_data",
     "delete_all_data",
     "delete_all_tables",
