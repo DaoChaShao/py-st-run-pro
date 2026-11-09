@@ -87,6 +87,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with new presentation feature ([ba278c0](https://github.com/DaoChaShao/py-st-run-pro/commit/ba278c0e515958bc7daf7ea67d88bb269aeb316b))
 - **changelog:** update changelog with new features and refactors ([c9536d9](https://github.com/DaoChaShao/py-st-run-pro/commit/c9536d999a9cf683e85d8cb3c20159212b750662))
 - **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
