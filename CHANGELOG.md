@@ -1,10 +1,11 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-08)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-09)
 
 ### Features
 
+- **presentation:** add data quality analysis and trend visualization ([a70c452](https://github.com/DaoChaShao/py-st-run-pro/commit/a70c4526233ccf7f6cfcd84c6cc56a5513469ec6))
 - **presentation:** add exercise presentation subpage ([b74465d](https://github.com/DaoChaShao/py-st-run-pro/commit/b74465dd292e00b8831accbb47105603c4bda2c8))
 - **layout:** add presentation page to layout ([e136a45](https://github.com/DaoChaShao/py-st-run-pro/commit/e136a454178afac544fb9c79def4d88011b0e519))
 - **hammer:** add database status check with init support ([142bde3](https://github.com/DaoChaShao/py-st-run-pro/commit/142bde3f46c016f7946987766fadb030c57ae804))
@@ -86,7 +87,7 @@
 
 ### Docs
 
-- **changelog:** update changelog with new features and refactors ([e754ce6](https://github.com/DaoChaShao/py-st-run-pro/commit/e754ce6a2554d6e7b9d3f0770f0a029a6a1edd30))
+- **changelog:** update changelog with new features and refactors ([c9536d9](https://github.com/DaoChaShao/py-st-run-pro/commit/c9536d999a9cf683e85d8cb3c20159212b750662))
 - **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
 - **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
