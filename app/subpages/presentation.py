@@ -8,13 +8,13 @@
 
 from pandas import DataFrame
 from streamlit import (
-    empty,
-    stop,
-    selectbox,
-    line_chart,
     columns,
+    empty,
+    line_chart,
     metric,
+    selectbox,
     sidebar,
+    stop,
 )
 
 from app.tools import CONFIG, SQLITE, check_db_status_with_stop
