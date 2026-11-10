@@ -12,6 +12,7 @@ from streamlit import (
     empty,
     expander,
     line_chart,
+    markdown,
     metric,
     rerun,
     session_state,
@@ -58,6 +59,7 @@ with InitSession(sqlite.engine).init() as session:
         if session_state["EXERCISES"] is None:
             session_state["EXERCISES"] = get_data(session, Exercise).copy()
 
+        markdown("##### Data Overview")
         left, right = columns(2)
         all_values: int = session_state["EXERCISES"].size
         dup_values: int = session_state["EXERCISES"].duplicated().sum()
@@ -103,9 +105,11 @@ with InitSession(sqlite.engine).init() as session:
             with expander("**Imputation Data**", expanded=False):
                 data_editor(session_state["EXERCISES"], hide_index=True, disabled=True, width="stretch")
 
+            markdown("##### Overall Line Chart")
             data = session_state["EXERCISES"][["date", selection]].set_index("date")
             line_chart(data, width="stretch", height="stretch")
 
+            markdown("##### Grouped Line Chart")
             group: str = sidebar.selectbox("Chart Group", options=list(GROUPS))
             sidebar.caption(GROUPS[group]["description"])
             picks: list[str] = sidebar.multiselect(
