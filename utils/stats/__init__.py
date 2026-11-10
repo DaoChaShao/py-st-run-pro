@@ -20,11 +20,16 @@ __version__ = "0.1.0"
 
 from .lever import NumpySeed, summary_dataframe
 from .preprocessor import (
+    DataImputer,
+    FeatureScaler,
     TabularLoader,
     get_cls_label_distribution,
     get_reg_label_distribution,
 )
 from .types import (
+    CategoricalImputationMethods,
+    FeatureScalers,
+    NumericImputationMethods,
     TabularFormats,
 )
 
@@ -32,8 +37,12 @@ __all__ = [
     "NumpySeed",
     "summary_dataframe",
 
+    "DataImputer",
+    "FeatureScaler",
     "TabularLoader",
     "get_cls_label_distribution", "get_reg_label_distribution",
 
+    "CategoricalImputationMethods", "NumericImputationMethods",
+    "FeatureScalers",
     "TabularFormats",
 ]
