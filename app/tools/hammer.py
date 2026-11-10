@@ -26,6 +26,7 @@ from streamlit import (
     rerun,
     segmented_control,
     selectbox,
+    session_state,
     sidebar,
     slider,
     time_input,
@@ -86,6 +87,18 @@ def check_db_status_with_stop(filepath: Path, engine: Engine, table: str, notifi
         notification.error("Database or table not found. Please initialize it in the preparation page.")
         return False
     return True
+
+
+def cal_efficiency_factor(data: DataFrame) -> DataFrame:
+    """ Calculate the efficiency factor of the exercise """
+    data["efficiency_factor"] = (data["distance"] / (data["duration"] / 60)) / data["avg_heart_rate"]
+    return data
+
+
+def cal_stride_length(data: DataFrame) -> DataFrame:
+    """ Calculate the stride length of the exercise """
+    data["stride_length"] = (data["distance"] * 1000) / (data["avg_cadence"] * data["duration"])
+    return data
 
 
 @dialog("Create a new data", width="medium", position="center")
@@ -255,6 +268,7 @@ def delete_all_data(engine: Engine, table: Any) -> None:
             with InitSession(engine).init() as session:
                 session.query(table).delete()
                 session.commit()
+            session_state.flag_for_load = False
             rerun()
     with right:
         if button("No", type="primary", width="stretch"):
@@ -275,6 +289,7 @@ def delete_all_tables(engine: Engine) -> None:
     with left:
         if button("Yes", type="secondary", width="stretch"):
             DECLARATION.metadata.drop_all(engine)
+            session_state.flag_for_load = False
             rerun()
     with right:
         if button("No", type="primary", width="stretch"):
@@ -299,6 +314,8 @@ def delete_db(engine: Engine, db_path: Path) -> None:
 
             if db_path.exists():
                 remove(db_path)
+
+            session_state.flag_for_load = False
             rerun()
     with right:
         if button("No", type="primary", width="stretch"):
@@ -331,6 +348,46 @@ def delete_selected_data(engine: Engine, table: Any, db_idx: int) -> None:
             rerun()
 
 
+GROUPS: dict[str, dict[str, list | str]] = {
+    "Exercise Volume & Pace": {
+        "columns": ["distance", "duration", "avg_pace"],
+        "description": "Analyses exercise volume, duration, and pacing performance."
+    },
+    "Heart Rate & Intensity": {
+        "columns": ["avg_heart_rate", "effort", "rpe"],
+        "description": "Evaluates cardiovascular workload and perceived exercise intensity."
+    },
+    "Heart Rate Recovery": {
+        "columns": ["post_heart_rate_i", "post_heart_rate_ii", "post_heart_rate_iii"],
+        "description": "Tracks post-exercise heart rate recovery patterns."
+    },
+    "Heart Rate Zones": {
+        "columns": ["zone_i", "zone_ii", "zone_iii", "zone_iv", "zone_v"],
+        "description": "Examines the distribution of exercise intensity across heart rate zones."
+    },
+    "Energy Expenditure": {
+        "columns": ["active_kilocalories", "total_kilocalories"],
+        "description": "Compares active and total energy expenditure during exercise."
+    },
+    "Gait & Movement Efficiency": {
+        "columns": ["avg_cadence", "stride_length"],
+        "description": "Analyses cadence and stride length to assess movement patterns."
+    },
+    "Exercise Efficiency": {
+        "columns": ["efficiency_factor", "avg_pace", "avg_heart_rate"],
+        "description": "Examines the relationship between exercise efficiency, pace, and cardiovascular response."
+    },
+    "Body Weight": {
+        "columns": ["weight"],
+        "description": "Tracks changes in body weight over time."
+    },
+    "Terrain Impact": {
+        "columns": ["slope", "avg_pace", "avg_heart_rate"],
+        "description": "Examines how terrain gradient relates to pace and cardiovascular workload."
+    },
+}
+
+
 @dialog("Load default data", width="small", position="center")
 def load_default_data(engine: Engine, table: Any) -> None:
     """
@@ -345,7 +402,7 @@ def load_default_data(engine: Engine, table: Any) -> None:
     left, right = columns(2)
     with left:
         if button("Yes", type="secondary", width="stretch"):
-            with TabularLoader(EXCEL, display=True) as loader:
+            with TabularLoader(EXCEL, display=False) as loader:
                 exercises: DataFrame = loader.load(file_category=TabularFormats.EXCEL)
                 # print(exercises)
                 with InitSession(engine).init() as session:
@@ -373,13 +430,51 @@ def load_default_data(engine: Engine, table: Any) -> None:
                             post_heart_rate_ii=row.get("post_heart_rate_ii"),
                             post_heart_rate_iii=row.get("post_heart_rate_iii"),
                             weight=row.get("weight"),
+                            rpe=row.get("rpe"),
                         )
                         session.add(new_record)
                     session.commit()
+            session_state.flag_for_load = True
             rerun()
     with right:
         if button("No", type="primary", width="stretch"):
             rerun()
+
+
+def map_col_labels(data: str) -> str:
+    """ Map column labels to a more readable format """
+    abbreviations: dict[str, str] = {
+        "ii": "II", "iii": "III", "iv": "IV",
+        "rpe": "RPE",
+    }
+    return " ".join(abbreviations.get(word, word.capitalize()) for word in data.split("_"))
+
+
+def transform_minutes_to_time(minutes: float) -> date_time:
+    """
+    Transform float minutes to time formate
+
+    :param minutes: The minutes to transform
+    :return: The transformed time
+    """
+    if not minutes:
+        return date_time.min
+
+    total: int = int(minutes * 60)
+    hours: int = round(total // 3600, 2)
+    minutes: int = round((total % 3600) // 60, 2)
+    seconds: int = round(total % 60, 2)
+    return date_time(hours, minutes, seconds)
+
+
+def transform_time_to_minutes(t: date_time) -> float:
+    """
+    Transform time to minutes
+
+    :param t: The time to transform
+    :return: The transformed minutes
+    """
+    return round(t.hour * 60.0 + t.minute + t.second / 60.0, 2)
 
 
 @dialog("Update the data", width="medium", position="center")
@@ -545,30 +640,3 @@ def update_data(engine: Engine, table: Any, db_idx: int) -> None:
 
                 session.commit()
             rerun()
-
-
-def transform_minutes_to_time(minutes: float) -> date_time:
-    """
-    Transform float minutes to time formate
-
-    :param minutes: The minutes to transform
-    :return: The transformed time
-    """
-    if not minutes:
-        return date_time.min
-
-    total: int = int(minutes * 60)
-    hours: int = round(total // 3600, 2)
-    minutes: int = round((total % 3600) // 60, 2)
-    seconds: int = round(total % 60, 2)
-    return date_time(hours, minutes, seconds)
-
-
-def transform_time_to_minutes(t: date_time) -> float:
-    """
-    Transform time to minutes
-
-    :param t: The time to transform
-    :return: The transformed minutes
-    """
-    return round(t.hour * 60.0 + t.minute + t.second / 60.0, 2)
