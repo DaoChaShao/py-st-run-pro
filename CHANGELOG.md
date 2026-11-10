@@ -5,6 +5,7 @@
 
 ### Features
 
+- **preparation:** add markdown section headings for UI clarity ([c464717](https://github.com/DaoChaShao/py-st-run-pro/commit/c4647175bde530356d5375499f21602b6bfee40a))
 - **stats:** add data preprocessing enum types ([1a30ee6](https://github.com/DaoChaShao/py-st-run-pro/commit/1a30ee6f65b1fbf510140438997d72ab2cc0d877))
 - **stats:** add data imputation and feature scaling classes ([fa8c5d2](https://github.com/DaoChaShao/py-st-run-pro/commit/fa8c5d22c836e7ff960292e130399c84556359db))
 - **preparation:** add data prep pipeline with metrics and charts ([ce38d2e](https://github.com/DaoChaShao/py-st-run-pro/commit/ce38d2e16f06f2f54cccc520e21b7081be116ecb))
@@ -94,8 +95,8 @@
 
 ### Docs
 
+- **changelog:** update changelog with new features and refactors ([6a2a1c2](https://github.com/DaoChaShao/py-st-run-pro/commit/6a2a1c2ff2b5c22f87f53779e5ba91c3c4d54360))
 - **changelog:** update changelog with new presentation feature ([9d17335](https://github.com/DaoChaShao/py-st-run-pro/commit/9d1733508fda3f2b79658be1759c55deb617d56d))
-- **changelog:** update changelog with new features and refactors ([c9536d9](https://github.com/DaoChaShao/py-st-run-pro/commit/c9536d999a9cf683e85d8cb3c20159212b750662))
 - **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
 - **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
