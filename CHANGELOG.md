@@ -1,10 +1,17 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-09)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-10)
 
 ### Features
 
+- **stats:** add data preprocessing enum types ([1a30ee6](https://github.com/DaoChaShao/py-st-run-pro/commit/1a30ee6f65b1fbf510140438997d72ab2cc0d877))
+- **stats:** add data imputation and feature scaling classes ([fa8c5d2](https://github.com/DaoChaShao/py-st-run-pro/commit/fa8c5d22c836e7ff960292e130399c84556359db))
+- **preparation:** add data prep pipeline with metrics and charts ([ce38d2e](https://github.com/DaoChaShao/py-st-run-pro/commit/ce38d2e16f06f2f54cccc520e21b7081be116ecb))
+- **layout:** add Data Initialisation page to navigation ([f8e1ea9](https://github.com/DaoChaShao/py-st-run-pro/commit/f8e1ea98fc6b3cd0f4193821a2db9d858c713017))
+- **subpages:** add exercise data management initialisation page ([43e4363](https://github.com/DaoChaShao/py-st-run-pro/commit/43e4363c1ce2dea8f13bc14a7176099b892cdc9d))
+- **hammer:** add analysis metrics and session state ([974592e](https://github.com/DaoChaShao/py-st-run-pro/commit/974592ecde5c9d88cf5fc90efe8a2ad1ce1bfc1e))
+- **stats:** expose DataImputer and FeatureScaler in public API ([b07d848](https://github.com/DaoChaShao/py-st-run-pro/commit/b07d848eea6d59ec768fdaa6bfbbe48e8eaa3b08))
 - **presentation:** add data quality analysis and trend visualization ([a70c452](https://github.com/DaoChaShao/py-st-run-pro/commit/a70c4526233ccf7f6cfcd84c6cc56a5513469ec6))
 - **presentation:** add exercise presentation subpage ([b74465d](https://github.com/DaoChaShao/py-st-run-pro/commit/b74465dd292e00b8831accbb47105603c4bda2c8))
 - **layout:** add presentation page to layout ([e136a45](https://github.com/DaoChaShao/py-st-run-pro/commit/e136a454178afac544fb9c79def4d88011b0e519))
@@ -87,7 +94,7 @@
 
 ### Docs
 
-- **changelog:** update changelog with new presentation feature ([ba278c0](https://github.com/DaoChaShao/py-st-run-pro/commit/ba278c0e515958bc7daf7ea67d88bb269aeb316b))
+- **changelog:** update changelog with new presentation feature ([9d17335](https://github.com/DaoChaShao/py-st-run-pro/commit/9d1733508fda3f2b79658be1759c55deb617d56d))
 - **changelog:** update changelog with new features and refactors ([c9536d9](https://github.com/DaoChaShao/py-st-run-pro/commit/c9536d999a9cf683e85d8cb3c20159212b750662))
 - **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
@@ -105,6 +112,8 @@
 
 ### Code Refactoring
 
+- **presentation:** replace UI code with grouped field definitions ([a2dc54c](https://github.com/DaoChaShao/py-st-run-pro/commit/a2dc54c3e798f454ee6714d9b786a71fd24ecbde))
+- **tools:** 补充hammer模块新增函数和常量的公共导出 ([8da78d3](https://github.com/DaoChaShao/py-st-run-pro/commit/8da78d35a4f51df84339c6d8fa90fbc46530f6f6))
 - **prep:** extract db init check into reusable function ([98af3ff](https://github.com/DaoChaShao/py-st-run-pro/commit/98af3ff901c9c9cb369af71990010bc9564def86))
 - **dbk:** change date field type and rename calorie columns ([20dfedd](https://github.com/DaoChaShao/py-st-run-pro/commit/20dfeddfabd75c0ac51b194fda401ead3c5e373e))
 - **engines:** remove unused db functions ([c821e93](https://github.com/DaoChaShao/py-st-run-pro/commit/c821e93ce0bb3242a80724817f591e4bf76ad64e))
