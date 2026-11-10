@@ -10,6 +10,31 @@ from enum import StrEnum, unique
 
 
 @unique
+class CategoricalImputationMethods(StrEnum):
+    MODE = "mode"
+    CONSTANT = "constant"
+    FFILL = "ffill"
+    BFILL = "bfill"
+
+
+@unique
+class FeatureScalers(StrEnum):
+    NORMALISATION = "normalisation"
+    STANDARDISATION = "standardisation"
+    ROBUSTIFICATION = "robustification"
+
+
+@unique
+class NumericImputationMethods(StrEnum):
+    LINEAR = "linear"
+    MEAN = "mean"
+    MEDIAN = "median"
+    ZERO = "zero"
+    FFILL = "ffill"
+    BFFILL = "bfill"
+
+
+@unique
 class TabularFormats(StrEnum):
     CSV = "csv"
     EXCEL = "excel"
