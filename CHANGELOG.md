@@ -1,10 +1,11 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-10)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-12)
 
 ### Features
 
+- **preparation:** add date range selector for line charts ([9a059b8](https://github.com/DaoChaShao/py-st-run-pro/commit/9a059b808b567d2dc48b12ccda110ac94bab3bce))
 - **preparation:** add markdown section headings for UI clarity ([c464717](https://github.com/DaoChaShao/py-st-run-pro/commit/c4647175bde530356d5375499f21602b6bfee40a))
 - **stats:** add data preprocessing enum types ([1a30ee6](https://github.com/DaoChaShao/py-st-run-pro/commit/1a30ee6f65b1fbf510140438997d72ab2cc0d877))
 - **stats:** add data imputation and feature scaling classes ([fa8c5d2](https://github.com/DaoChaShao/py-st-run-pro/commit/fa8c5d22c836e7ff960292e130399c84556359db))
@@ -95,11 +96,11 @@
 
 ### Docs
 
+- **changelog:** update changelog with new feature entries ([248b7c7](https://github.com/DaoChaShao/py-st-run-pro/commit/248b7c73677b07a5cacc341657fd1d79a4b02216))
 - **changelog:** update changelog with new features and refactors ([6a2a1c2](https://github.com/DaoChaShao/py-st-run-pro/commit/6a2a1c2ff2b5c22f87f53779e5ba91c3c4d54360))
 - **changelog:** update changelog with new presentation feature ([9d17335](https://github.com/DaoChaShao/py-st-run-pro/commit/9d1733508fda3f2b79658be1759c55deb617d56d))
 - **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
-- **changelog:** update changelog with new feature entries ([959a6d8](https://github.com/DaoChaShao/py-st-run-pro/commit/959a6d866a6a87be56df0c3efbb62d09aaddeb40))
 - **changelog:** add dbk features and refactoring entries ([b253fc5](https://github.com/DaoChaShao/py-st-run-pro/commit/b253fc54e45abc762972e0cdfb7115b09225d0ce))
 - **changelog:** update CHANGELOG.md with dbk feature and refactoring entries ([ab6720a](https://github.com/DaoChaShao/py-st-run-pro/commit/ab6720a0601f26a3be833743e34ed2983892c263))
 - **changelog:** update CHANGELOG.md with dbk feature and fix entries ([1065fd7](https://github.com/DaoChaShao/py-st-run-pro/commit/1065fd7c4e31bdf61915a3f83802370a88e4f17e))
@@ -113,6 +114,7 @@
 
 ### Code Refactoring
 
+- **hammer:** move GROUPS near other constants ([3913401](https://github.com/DaoChaShao/py-st-run-pro/commit/391340101bfbe7efc0451b2c73fd79b5c570b475))
 - **presentation:** replace UI code with grouped field definitions ([a2dc54c](https://github.com/DaoChaShao/py-st-run-pro/commit/a2dc54c3e798f454ee6714d9b786a71fd24ecbde))
 - **tools:** 补充hammer模块新增函数和常量的公共导出 ([8da78d3](https://github.com/DaoChaShao/py-st-run-pro/commit/8da78d35a4f51df84339c6d8fa90fbc46530f6f6))
 - **prep:** extract db init check into reusable function ([98af3ff](https://github.com/DaoChaShao/py-st-run-pro/commit/98af3ff901c9c9cb369af71990010bc9564def86))
