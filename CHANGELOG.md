@@ -5,6 +5,9 @@
 
 ### Features
 
+- **layout:** add Efficiency Factor page to navigation ([49ed8f9](https://github.com/DaoChaShao/py-st-run-pro/commit/49ed8f92ce6abc78854248bea76129ea95236109))
+- **ef:** add EF exercises subpage with session state ([22f56c8](https://github.com/DaoChaShao/py-st-run-pro/commit/22f56c8e084512ca960cdd346a05447466eaa3ad))
+- **acwr:** add acute:chronic workload ratio calculation ([37c414c](https://github.com/DaoChaShao/py-st-run-pro/commit/37c414c483552c4409023da879352cc9dcc7cf95))
 - **preparation:** add date range selector for line charts ([9a059b8](https://github.com/DaoChaShao/py-st-run-pro/commit/9a059b808b567d2dc48b12ccda110ac94bab3bce))
 - **preparation:** add markdown section headings for UI clarity ([c464717](https://github.com/DaoChaShao/py-st-run-pro/commit/c4647175bde530356d5375499f21602b6bfee40a))
 - **stats:** add data preprocessing enum types ([1a30ee6](https://github.com/DaoChaShao/py-st-run-pro/commit/1a30ee6f65b1fbf510140438997d72ab2cc0d877))
@@ -76,6 +79,7 @@
 
 ### Chore
 
+- **main:** remove commented-out dead code ([682721d](https://github.com/DaoChaShao/py-st-run-pro/commit/682721d04da5fd65374c0ba0ad821f18a18232b3))
 - **deps:** add watchdog dependency to lock file ([81e85e5](https://github.com/DaoChaShao/py-st-run-pro/commit/81e85e5fedd9a7265db8453e5021514e4c860e13))
 - **deps:** add watchdog dependency to project ([5468938](https://github.com/DaoChaShao/py-st-run-pro/commit/5468938c112cb8856890aaacff611ab654b8a801))
 - **app:** add .gitignore for Python project files ([360b3f8](https://github.com/DaoChaShao/py-st-run-pro/commit/360b3f8b336871c7d9922fa9e3f60d4b9f962090))
@@ -96,6 +100,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with recent additions ([c340e8b](https://github.com/DaoChaShao/py-st-run-pro/commit/c340e8b08841e4b3653bdf8bf9bddf584a43900b))
 - **changelog:** update changelog with new feature entries ([248b7c7](https://github.com/DaoChaShao/py-st-run-pro/commit/248b7c73677b07a5cacc341657fd1d79a4b02216))
 - **changelog:** update changelog with new features and refactors ([6a2a1c2](https://github.com/DaoChaShao/py-st-run-pro/commit/6a2a1c2ff2b5c22f87f53779e5ba91c3c4d54360))
 - **changelog:** update changelog with new presentation feature ([9d17335](https://github.com/DaoChaShao/py-st-run-pro/commit/9d1733508fda3f2b79658be1759c55deb617d56d))
@@ -114,6 +119,9 @@
 
 ### Code Refactoring
 
+- **acwr:** remove unused imports from acwr subpage ([854271c](https://github.com/DaoChaShao/py-st-run-pro/commit/854271ca019081f4985882830322b915dfcd3059))
+- **preparation:** improve data variable naming and cleanup imports ([3cce1f1](https://github.com/DaoChaShao/py-st-run-pro/commit/3cce1f1e70a09da0150cced56a1c1ed730e44cec))
+- **layout:** rename presentation page to ACWR page ([79d0d03](https://github.com/DaoChaShao/py-st-run-pro/commit/79d0d03b17e5cfbb0f0824a6a144d059c145e657))
 - **hammer:** move GROUPS near other constants ([3913401](https://github.com/DaoChaShao/py-st-run-pro/commit/391340101bfbe7efc0451b2c73fd79b5c570b475))
 - **presentation:** replace UI code with grouped field definitions ([a2dc54c](https://github.com/DaoChaShao/py-st-run-pro/commit/a2dc54c3e798f454ee6714d9b786a71fd24ecbde))
 - **tools:** 补充hammer模块新增函数和常量的公共导出 ([8da78d3](https://github.com/DaoChaShao/py-st-run-pro/commit/8da78d35a4f51df84339c6d8fa90fbc46530f6f6))
