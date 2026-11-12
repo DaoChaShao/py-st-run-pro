@@ -30,6 +30,7 @@ def set_pages() -> None:
             "app/subpages/home.py",
             "app/subpages/initialisation.py",
             "app/subpages/preparation.py",
+            "app/subpages/ef.py",
             "app/subpages/acwr.py",
             # "app/subpages/prescription.py"
         ],
@@ -37,6 +38,7 @@ def set_pages() -> None:
             "Home",
             "Data Initialisation",
             "Data Preparation",
+            "Efficiency Factor",
             "Acute:Chronic Workload Ratio",
             # "AI-Driven Training Load Prescription"
         ],
@@ -44,7 +46,8 @@ def set_pages() -> None:
             ":material/home:",
             ":material/database:",
             ":material/dashboard:",
-            ":material/analytics:",
+            ":material/looks_one:",
+            ":material/looks_two:",
             # ":material/clinical_notes:"
         ],
     }
@@ -57,7 +60,7 @@ def set_pages() -> None:
             Page(page=pages["page"][1], title=pages["title"][1], icon=pages["icon"][1]),
             Page(page=pages["page"][2], title=pages["title"][2], icon=pages["icon"][2]),
             Page(page=pages["page"][3], title=pages["title"][3], icon=pages["icon"][3]),
-            # Page(page=pages["page"][4], title=pages["title"][4], icon=pages["icon"][4]),
+            Page(page=pages["page"][4], title=pages["title"][4], icon=pages["icon"][4]),
         ],
     }
     pg = navigation(structure, position="sidebar", expanded=True)
