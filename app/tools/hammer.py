@@ -46,6 +46,45 @@ SQLITE: Path = BASE / "data/sqlite3.db"
 EXCEL: Path = BASE / "data/exercise.xlsx"
 CONFIG: DBConfig = DBConfig(path=SQLITE)
 
+GROUPS: dict[str, dict[str, list | str]] = {
+    "Exercise Volume & Pace": {
+        "columns": ["distance", "duration", "avg_pace"],
+        "description": "Analyses exercise volume, duration, and pacing performance."
+    },
+    "Heart Rate & Intensity": {
+        "columns": ["avg_heart_rate", "effort", "rpe"],
+        "description": "Evaluates cardiovascular workload and perceived exercise intensity."
+    },
+    "Heart Rate Recovery": {
+        "columns": ["post_heart_rate_i", "post_heart_rate_ii", "post_heart_rate_iii"],
+        "description": "Tracks post-exercise heart rate recovery patterns."
+    },
+    "Heart Rate Zones": {
+        "columns": ["zone_i", "zone_ii", "zone_iii", "zone_iv", "zone_v"],
+        "description": "Examines the distribution of exercise intensity across heart rate zones."
+    },
+    "Energy Expenditure": {
+        "columns": ["active_kilocalories", "total_kilocalories"],
+        "description": "Compares active and total energy expenditure during exercise."
+    },
+    "Gait & Movement Efficiency": {
+        "columns": ["avg_cadence", "stride_length"],
+        "description": "Analyses cadence and stride length to assess movement patterns."
+    },
+    "Exercise Efficiency": {
+        "columns": ["efficiency_factor", "avg_pace", "avg_heart_rate"],
+        "description": "Examines the relationship between exercise efficiency, pace, and cardiovascular response."
+    },
+    "Body Weight": {
+        "columns": ["weight"],
+        "description": "Tracks changes in body weight over time."
+    },
+    "Terrain Impact": {
+        "columns": ["slope", "avg_pace", "avg_heart_rate"],
+        "description": "Examines how terrain gradient relates to pace and cardiovascular workload."
+    },
+}
+
 
 def check_db_status_with_init(filepath: Path, engine: Engine, table: str, notification: Any) -> bool:
     """
@@ -346,46 +385,6 @@ def delete_selected_data(engine: Engine, table: Any, db_idx: int) -> None:
     with right:
         if button("No", type="primary", width="stretch"):
             rerun()
-
-
-GROUPS: dict[str, dict[str, list | str]] = {
-    "Exercise Volume & Pace": {
-        "columns": ["distance", "duration", "avg_pace"],
-        "description": "Analyses exercise volume, duration, and pacing performance."
-    },
-    "Heart Rate & Intensity": {
-        "columns": ["avg_heart_rate", "effort", "rpe"],
-        "description": "Evaluates cardiovascular workload and perceived exercise intensity."
-    },
-    "Heart Rate Recovery": {
-        "columns": ["post_heart_rate_i", "post_heart_rate_ii", "post_heart_rate_iii"],
-        "description": "Tracks post-exercise heart rate recovery patterns."
-    },
-    "Heart Rate Zones": {
-        "columns": ["zone_i", "zone_ii", "zone_iii", "zone_iv", "zone_v"],
-        "description": "Examines the distribution of exercise intensity across heart rate zones."
-    },
-    "Energy Expenditure": {
-        "columns": ["active_kilocalories", "total_kilocalories"],
-        "description": "Compares active and total energy expenditure during exercise."
-    },
-    "Gait & Movement Efficiency": {
-        "columns": ["avg_cadence", "stride_length"],
-        "description": "Analyses cadence and stride length to assess movement patterns."
-    },
-    "Exercise Efficiency": {
-        "columns": ["efficiency_factor", "avg_pace", "avg_heart_rate"],
-        "description": "Examines the relationship between exercise efficiency, pace, and cardiovascular response."
-    },
-    "Body Weight": {
-        "columns": ["weight"],
-        "description": "Tracks changes in body weight over time."
-    },
-    "Terrain Impact": {
-        "columns": ["slope", "avg_pace", "avg_heart_rate"],
-        "description": "Examines how terrain gradient relates to pace and cardiovascular workload."
-    },
-}
 
 
 @dialog("Load default data", width="small", position="center")
