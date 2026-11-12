@@ -30,14 +30,14 @@ def set_pages() -> None:
             "app/subpages/home.py",
             "app/subpages/initialisation.py",
             "app/subpages/preparation.py",
-            "app/subpages/presentation.py",
+            "app/subpages/acwr.py",
             # "app/subpages/prescription.py"
         ],
         "title": [
             "Home",
             "Data Initialisation",
             "Data Preparation",
-            "Data Presentation & Trend",
+            "Acute:Chronic Workload Ratio",
             # "AI-Driven Training Load Prescription"
         ],
         "icon": [
