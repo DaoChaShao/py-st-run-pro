@@ -6,7 +6,6 @@
 # @File     :   preparation.py
 # @Desc     :
 
-from pandas import to_datetime
 from streamlit import (
     columns,
     data_editor,
@@ -44,8 +43,9 @@ NOTIFICATION = empty()
 
 sqlite = InitEngine(CONFIG)
 
-if "EXERCISES" not in session_state:
-    session_state.EXERCISES = None
+for key in ["EXERCISES"]:
+    if key not in session_state:
+        session_state[key] = None
 
 if not check_db_status_with_stop(SQLITE, sqlite.engine, Exercise.__tablename__, NOTIFICATION):
     stop()
@@ -108,25 +108,26 @@ with InitSession(sqlite.engine).init() as session:
                 data_editor(session_state["EXERCISES"], hide_index=True, disabled=True, width="stretch")
 
             markdown("##### Overall Line Chart")
-            data = session_state["EXERCISES"][["date", selection]]
-            data["date"] = to_datetime(data["date"])
-            data = data.set_index("date").sort_index()
+            selected_data = session_state["EXERCISES"][["date", selection]].set_index("date").sort_index()
             start, end = columns(2)
             with start:
                 start_date = date_input(
                     "Start Date",
-                    min_value=data.index.min().date(), max_value=data.index.max().date(), value=data.index.min().date(),
+                    min_value=selected_data.index.min().date(),
+                    max_value=selected_data.index.max().date(),
+                    value=selected_data.index.min().date(),
                     width="stretch", help="Select the start date for the chart",
                 )
             with end:
                 end_date = date_input(
                     "End Date",
-                    min_value=start_date, max_value=data.index.max().date(), value=data.index.max().date(),
+                    min_value=start_date, max_value=selected_data.index.max().date(),
+                    value=selected_data.index.max().date(),
                     width="stretch", help="Select the end date for the chart",
                 )
 
-            data = data.loc[start_date.isoformat():end_date.isoformat()]
-            line_chart(data, width="stretch", height="stretch")
+            overall_data = selected_data.loc[start_date.isoformat():end_date.isoformat()]
+            line_chart(overall_data, width="stretch", height="stretch")
 
             markdown("##### Grouped Line Chart")
             group: str = sidebar.selectbox("Chart Group", options=list(GROUPS))
@@ -139,9 +140,9 @@ with InitSession(sqlite.engine).init() as session:
             )
 
             if picks:
-                data = session_state["EXERCISES"][["date", *picks]].set_index("date")
-                with FeatureScaler(data, category=FeatureScalers.NORMALISATION) as scaler:
-                    data = scaler.scale()
+                grouped_data = session_state["EXERCISES"][["date", *picks]].set_index("date").sort_index()
+                with FeatureScaler(grouped_data, category=FeatureScalers.NORMALISATION) as scaler:
+                    grouped_data = scaler.scale()
 
-                data = data.loc[start_date.isoformat():end_date.isoformat()]
-                line_chart(data, width="stretch", height="stretch")
+                grouped_data = grouped_data.loc[start_date.isoformat():end_date.isoformat()]
+                line_chart(grouped_data, width="stretch", height="stretch")
