@@ -6,9 +6,11 @@
 # @File     :   preparation.py
 # @Desc     :
 
+from pandas import to_datetime
 from streamlit import (
     columns,
     data_editor,
+    date_input,
     empty,
     expander,
     line_chart,
@@ -106,7 +108,24 @@ with InitSession(sqlite.engine).init() as session:
                 data_editor(session_state["EXERCISES"], hide_index=True, disabled=True, width="stretch")
 
             markdown("##### Overall Line Chart")
-            data = session_state["EXERCISES"][["date", selection]].set_index("date")
+            data = session_state["EXERCISES"][["date", selection]]
+            data["date"] = to_datetime(data["date"])
+            data = data.set_index("date").sort_index()
+            start, end = columns(2)
+            with start:
+                start_date = date_input(
+                    "Start Date",
+                    min_value=data.index.min().date(), max_value=data.index.max().date(), value=data.index.min().date(),
+                    width="stretch", help="Select the start date for the chart",
+                )
+            with end:
+                end_date = date_input(
+                    "End Date",
+                    min_value=start_date, max_value=data.index.max().date(), value=data.index.max().date(),
+                    width="stretch", help="Select the end date for the chart",
+                )
+
+            data = data.loc[start_date.isoformat():end_date.isoformat()]
             line_chart(data, width="stretch", height="stretch")
 
             markdown("##### Grouped Line Chart")
@@ -123,4 +142,6 @@ with InitSession(sqlite.engine).init() as session:
                 data = session_state["EXERCISES"][["date", *picks]].set_index("date")
                 with FeatureScaler(data, category=FeatureScalers.NORMALISATION) as scaler:
                     data = scaler.scale()
+
+                data = data.loc[start_date.isoformat():end_date.isoformat()]
                 line_chart(data, width="stretch", height="stretch")
