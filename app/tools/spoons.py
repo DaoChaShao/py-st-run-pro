@@ -3,7 +3,7 @@
 # @Time     :   2026/11/7 16:31
 # @Author   :   Shawn
 # @Version  :   Version 0.1.0
-# @File     :   hammer.py
+# @File     :   spoons.py
 # @Desc     :
 
 from datetime import date as date_date
@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 from datetime import time as date_time
 from os import remove
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from pandas import DataFrame
 from sqlalchemy.engine import Engine
@@ -84,6 +84,29 @@ GROUPS: dict[str, dict[str, list | str]] = {
         "description": "Examines how terrain gradient relates to pace and cardiovascular workload."
     },
 }
+
+
+def check_api_key(entered_key: str, *, model: str | Literal["OpenAI", "DeepSeek"], notification: Any) -> bool:
+    match model:
+        case "OpenAI":
+            _characters = 164
+        case "DeepSeek":
+            _characters = 35
+        case _:
+            raise ValueError("Invalid model category")
+
+    if not entered_key:
+        notification.error("Please enter an API key.")
+        return False
+    if not entered_key.startswith("sk-"):
+        notification.error(f"Please enter a **VALID** {model} API key (must start with 'sk-').")
+        return False
+    if len(entered_key) != _characters:
+        notification.warning(f"The length of {model} API key: {len(entered_key)}/{_characters} characters.")
+        return False
+
+    notification.success(f"The {model} API key is valid.")
+    return True
 
 
 def check_db_status_with_init(filepath: Path, engine: Engine, table: str, notification: Any) -> bool:
