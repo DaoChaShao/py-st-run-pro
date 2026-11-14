@@ -1,10 +1,23 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-12)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-15)
 
 ### Features
 
+- update the uv.lock file ([d5a7c0d](https://github.com/DaoChaShao/py-st-run-pro/commit/d5a7c0da438c81c9c77a57b6f720b0eaca4e53bf))
+- **agents:** add model type definitions for agents module ([da22254](https://github.com/DaoChaShao/py-st-run-pro/commit/da22254caf3b7791aa5c3a511d863845f92e5c2d))
+- **analyser:** add state models for analyser agent ([8706d8f](https://github.com/DaoChaShao/py-st-run-pro/commit/8706d8f3ffa831efe83afb965f81e4fee3d8ef8c))
+- **tools:** add API key validation utility function ([88d4d5f](https://github.com/DaoChaShao/py-st-run-pro/commit/88d4d5f2b43f25b1055377519894e50975d2efcd))
+- **analyser:** add ACWR calculator and analysis prompt service ([02df032](https://github.com/DaoChaShao/py-st-run-pro/commit/02df03263a1ccd1d4457071b004f92b0cd0a7406))
+- **analyser:** add calculation and assessment workflow nodes ([c966c56](https://github.com/DaoChaShao/py-st-run-pro/commit/c966c56003fb99843d6ccb617df6835d890d66da))
+- **analyser:** add ACWRAssessment Pydantic model ([d7b10ca](https://github.com/DaoChaShao/py-st-run-pro/commit/d7b10ca398f91cfe6128ab42b3d4d3388c592219))
+- **analyser:** add ACWR assessment graph with LangGraph ([734b933](https://github.com/DaoChaShao/py-st-run-pro/commit/734b9338aa8dc86aeb60b8739b10f191d123aca9))
+- **agents:** add agent initialiser for model providers ([8794ff1](https://github.com/DaoChaShao/py-st-run-pro/commit/8794ff18933548c90483b9142134c06748580076))
+- **acwr:** add AI-powered assessment for ACWR analysis ([2032f68](https://github.com/DaoChaShao/py-st-run-pro/commit/2032f68239ed15fd3a7794dcb8e66de1f45df41d))
+- **agents:** add package init with public API exports ([870600a](https://github.com/DaoChaShao/py-st-run-pro/commit/870600a7ea2430ab89ae6bf7372185529fa412cb))
+- **analyser:** add analyser package initialization ([e62a96c](https://github.com/DaoChaShao/py-st-run-pro/commit/e62a96cadfba644be3bcb4e57807d765bfa10f5c))
+- **layout:** add Efficiency Factor page and ACWR calculation ([bfdb713](https://github.com/DaoChaShao/py-st-run-pro/commit/bfdb7132f4165b62a7085b1bea4dcc3d98385079))
 - **layout:** add Efficiency Factor page to navigation ([49ed8f9](https://github.com/DaoChaShao/py-st-run-pro/commit/49ed8f92ce6abc78854248bea76129ea95236109))
 - **ef:** add EF exercises subpage with session state ([22f56c8](https://github.com/DaoChaShao/py-st-run-pro/commit/22f56c8e084512ca960cdd346a05447466eaa3ad))
 - **acwr:** add acute:chronic workload ratio calculation ([37c414c](https://github.com/DaoChaShao/py-st-run-pro/commit/37c414c483552c4409023da879352cc9dcc7cf95))
@@ -79,6 +92,9 @@
 
 ### Chore
 
+- **deps:** add langchain-deepseek and langgraph deps ([568de01](https://github.com/DaoChaShao/py-st-run-pro/commit/568de01b955e5b9bb06aaa0bb79804d4d0f25b5f))
+- **agents:** add .gitignore for Python artifacts ([806dfd6](https://github.com/DaoChaShao/py-st-run-pro/commit/806dfd61379df98b89cc1c0bfbaf7679573f77b9))
+- **analyser:** add .gitignore for Python project ([cd0e925](https://github.com/DaoChaShao/py-st-run-pro/commit/cd0e92588160eeceea0eb1d57d922f6c2bac10cd))
 - **main:** remove commented-out dead code ([682721d](https://github.com/DaoChaShao/py-st-run-pro/commit/682721d04da5fd65374c0ba0ad821f18a18232b3))
 - **deps:** add watchdog dependency to lock file ([81e85e5](https://github.com/DaoChaShao/py-st-run-pro/commit/81e85e5fedd9a7265db8453e5021514e4c860e13))
 - **deps:** add watchdog dependency to project ([5468938](https://github.com/DaoChaShao/py-st-run-pro/commit/5468938c112cb8856890aaacff611ab654b8a801))
@@ -119,6 +135,10 @@
 
 ### Code Refactoring
 
+- **analyser:** condense workload analysis prompt ([9641f44](https://github.com/DaoChaShao/py-st-run-pro/commit/9641f442c39affd42d8db3c1b2c3657810ad2197))
+- **dbk:** merge constants into configs module ([827d398](https://github.com/DaoChaShao/py-st-run-pro/commit/827d398861788a894fb97e688e4d90b9dc375c6b))
+- **dbk:** consolidate SQLITE import into configs module ([28f6330](https://github.com/DaoChaShao/py-st-run-pro/commit/28f6330ae1dfedd92c0eeffaeb0fd12fe52ebe23))
+- **tools:** replace hammer module with spoons import ([fab00e3](https://github.com/DaoChaShao/py-st-run-pro/commit/fab00e354701d5bb1831f3e4ad21d26f576fd829))
 - **acwr:** remove unused imports from acwr subpage ([854271c](https://github.com/DaoChaShao/py-st-run-pro/commit/854271ca019081f4985882830322b915dfcd3059))
 - **preparation:** improve data variable naming and cleanup imports ([3cce1f1](https://github.com/DaoChaShao/py-st-run-pro/commit/3cce1f1e70a09da0150cced56a1c1ed730e44cec))
 - **layout:** rename presentation page to ACWR page ([79d0d03](https://github.com/DaoChaShao/py-st-run-pro/commit/79d0d03b17e5cfbb0f0824a6a144d059c145e657))
