@@ -9,6 +9,9 @@
 from dataclasses import dataclass
 from pathlib import Path
 
+BASE = Path(__file__).resolve().parents[2]
+SQLITE: Path = BASE / "data/sqlite3.db"
+
 
 @dataclass
 class DBConfig:
