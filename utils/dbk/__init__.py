@@ -23,8 +23,7 @@ __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
 from .base import DECLARATION
-from .configs import DBConfig
-from .constants import SQLITE
+from .configs import SQLITE, DBConfig
 from .engines import InitEngine
 from .models import Exercise
 from .repository import (
@@ -41,9 +40,7 @@ from .session import InitSession
 __all__ = [
     "DECLARATION",
 
-    "DBConfig",
-
-    "SQLITE",
+    "DBConfig", "SQLITE",
 
     "InitEngine",
 
