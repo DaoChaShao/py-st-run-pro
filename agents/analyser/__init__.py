@@ -6,6 +6,15 @@
 # @File     :   __init__.py.py
 # @Desc     :
 
+"""
+************************************************************************
+Specialised Agent
+------------------------------------------------------------------------
+A collection of components for a LangGraph-based agent, including
+workflow execution and structured output generation.
+************************************************************************
+"""
+
 from .graphs import ACWRGrapher
 from .models import ACWRAssessment
 
@@ -14,6 +23,5 @@ __version__ = "0.1.0"
 
 __all__ = [
     "ACWRGrapher",
-
     "ACWRAssessment",
 ]
