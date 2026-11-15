@@ -15,7 +15,7 @@ workflow execution and structured output generation.
 ************************************************************************
 """
 
-from .analyser import ACWRAssessment, ACWRGrapher
+from .acwr import ACWRAssessment, ACWRGrapher
 from .forks import AgentInitialiser, load_yaml
 from .types import ModelCategories, ModelOutputMethods
 
