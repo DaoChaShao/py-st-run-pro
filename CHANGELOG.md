@@ -5,6 +5,7 @@
 
 ### Features
 
+- **ef:** add agent package init module ([fabad22](https://github.com/DaoChaShao/py-st-run-pro/commit/fabad220f80a4e23634ad07de4c04667453dc66b))
 - **acwr:** add AI assessment caching and regenerate flow ([928058e](https://github.com/DaoChaShao/py-st-run-pro/commit/928058e03b948661543c8f723a79ffc75936ac0a))
 - update the uv.lock file ([d5a7c0d](https://github.com/DaoChaShao/py-st-run-pro/commit/d5a7c0da438c81c9c77a57b6f720b0eaca4e53bf))
 - **agents:** add model type definitions for agents module ([da22254](https://github.com/DaoChaShao/py-st-run-pro/commit/da22254caf3b7791aa5c3a511d863845f92e5c2d))
@@ -87,12 +88,14 @@
 
 ### Bug Fixes
 
+- **agents:** correct typo in acwr module import ([892c4d6](https://github.com/DaoChaShao/py-st-run-pro/commit/892c4d623e99df3a9154d3c4f5533ade84b834cc))
 - **dbk:** correct column type mappings in exercise index model ([2db1e60](https://github.com/DaoChaShao/py-st-run-pro/commit/2db1e606d22d25f48f80ab71028b568f88719079))
 - **dbk:** rename sqlite db file to sqlite3.db ([98f464a](https://github.com/DaoChaShao/py-st-run-pro/commit/98f464a7a5f067e063c25625b5aa9168dcb2aabe))
 - **dbk:** resolve relative path in SQLite connection URL ([8cd3135](https://github.com/DaoChaShao/py-st-run-pro/commit/8cd31359a4efcf99ba5a09776d647483edbd11d5))
 
 ### Chore
 
+- **ef:** add .gitignore for Python project ([5a34d5e](https://github.com/DaoChaShao/py-st-run-pro/commit/5a34d5e8897862ecdfda60e6e5d0d7317e7e07e4))
 - **deps:** add langchain-deepseek and langgraph deps ([568de01](https://github.com/DaoChaShao/py-st-run-pro/commit/568de01b955e5b9bb06aaa0bb79804d4d0f25b5f))
 - **agents:** add .gitignore for Python artifacts ([806dfd6](https://github.com/DaoChaShao/py-st-run-pro/commit/806dfd61379df98b89cc1c0bfbaf7679573f77b9))
 - **analyser:** add .gitignore for Python project ([cd0e925](https://github.com/DaoChaShao/py-st-run-pro/commit/cd0e92588160eeceea0eb1d57d922f6c2bac10cd))
@@ -117,11 +120,11 @@
 
 ### Docs
 
+- **changelog:** update changelog with new features and refactors ([c706505](https://github.com/DaoChaShao/py-st-run-pro/commit/c706505a93410c3898fba82e33f91243f59233fa))
 - **analyser:** add module docstring to analyser package ([feb581f](https://github.com/DaoChaShao/py-st-run-pro/commit/feb581f4f8c03858f74cc8432e2c25a4e99e058f))
 - **changelog:** update changelog with new feature and refactor entries ([3cd19f3](https://github.com/DaoChaShao/py-st-run-pro/commit/3cd19f350eb31aecdc84fc8b8754eb78d6a20fde))
 - **changelog:** update changelog with recent additions ([c340e8b](https://github.com/DaoChaShao/py-st-run-pro/commit/c340e8b08841e4b3653bdf8bf9bddf584a43900b))
 - **changelog:** update changelog with new feature entries ([248b7c7](https://github.com/DaoChaShao/py-st-run-pro/commit/248b7c73677b07a5cacc341657fd1d79a4b02216))
-- **changelog:** update changelog with new features and refactors ([6a2a1c2](https://github.com/DaoChaShao/py-st-run-pro/commit/6a2a1c2ff2b5c22f87f53779e5ba91c3c4d54360))
 - **changelog:** update changelog with new presentation feature ([9d17335](https://github.com/DaoChaShao/py-st-run-pro/commit/9d1733508fda3f2b79658be1759c55deb617d56d))
 - **changelog:** update changelog with recent entries ([86fd176](https://github.com/DaoChaShao/py-st-run-pro/commit/86fd176b95b1a2a55598e1c5c2cc8a405fe2c718))
 - **changelog:** update changelog with latest entries ([e25ae59](https://github.com/DaoChaShao/py-st-run-pro/commit/e25ae592115defb6dbee67c1db0070466696b20c))
@@ -138,6 +141,7 @@
 
 ### Code Refactoring
 
+- **agents:** restructure agents and extract shared models ([5779eb2](https://github.com/DaoChaShao/py-st-run-pro/commit/5779eb200c1720d732f0dd445307348c1ea64234))
 - **states:** replace arbitrary types config with InstanceOf ([9a2face](https://github.com/DaoChaShao/py-st-run-pro/commit/9a2face58cd0c21ff0d9db050bbf62b20a6d6a04))
 - **analyser:** move log and status tracking to runtime context ([34f8c70](https://github.com/DaoChaShao/py-st-run-pro/commit/34f8c70eb56c21a004cbe413c61f5fbb4891f6b9))
 - **analyser:** return agent logs alongside graph result ([feebbab](https://github.com/DaoChaShao/py-st-run-pro/commit/feebbab12c50d832f783d766c7ff75713ef5b2ad))
