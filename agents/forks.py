@@ -15,8 +15,9 @@ from langchain_openai import ChatOpenAI
 from pydantic import SecretStr
 from yaml import dump, safe_load
 
-from agents.types import ModelCategories
 from utils.helper import Access
+
+from .types import ModelCategories
 
 
 class AgentInitialiser(Access):
