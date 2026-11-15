@@ -5,6 +5,7 @@
 
 ### Features
 
+- **acwr:** add AI assessment caching and regenerate flow ([928058e](https://github.com/DaoChaShao/py-st-run-pro/commit/928058e03b948661543c8f723a79ffc75936ac0a))
 - update the uv.lock file ([d5a7c0d](https://github.com/DaoChaShao/py-st-run-pro/commit/d5a7c0da438c81c9c77a57b6f720b0eaca4e53bf))
 - **agents:** add model type definitions for agents module ([da22254](https://github.com/DaoChaShao/py-st-run-pro/commit/da22254caf3b7791aa5c3a511d863845f92e5c2d))
 - **analyser:** add state models for analyser agent ([8706d8f](https://github.com/DaoChaShao/py-st-run-pro/commit/8706d8f3ffa831efe83afb965f81e4fee3d8ef8c))
@@ -116,6 +117,8 @@
 
 ### Docs
 
+- **analyser:** add module docstring to analyser package ([feb581f](https://github.com/DaoChaShao/py-st-run-pro/commit/feb581f4f8c03858f74cc8432e2c25a4e99e058f))
+- **changelog:** update changelog with new feature and refactor entries ([3cd19f3](https://github.com/DaoChaShao/py-st-run-pro/commit/3cd19f350eb31aecdc84fc8b8754eb78d6a20fde))
 - **changelog:** update changelog with recent additions ([c340e8b](https://github.com/DaoChaShao/py-st-run-pro/commit/c340e8b08841e4b3653bdf8bf9bddf584a43900b))
 - **changelog:** update changelog with new feature entries ([248b7c7](https://github.com/DaoChaShao/py-st-run-pro/commit/248b7c73677b07a5cacc341657fd1d79a4b02216))
 - **changelog:** update changelog with new features and refactors ([6a2a1c2](https://github.com/DaoChaShao/py-st-run-pro/commit/6a2a1c2ff2b5c22f87f53779e5ba91c3c4d54360))
@@ -135,6 +138,11 @@
 
 ### Code Refactoring
 
+- **states:** replace arbitrary types config with InstanceOf ([9a2face](https://github.com/DaoChaShao/py-st-run-pro/commit/9a2face58cd0c21ff0d9db050bbf62b20a6d6a04))
+- **analyser:** move log and status tracking to runtime context ([34f8c70](https://github.com/DaoChaShao/py-st-run-pro/commit/34f8c70eb56c21a004cbe413c61f5fbb4891f6b9))
+- **analyser:** return agent logs alongside graph result ([feebbab](https://github.com/DaoChaShao/py-st-run-pro/commit/feebbab12c50d832f783d766c7ff75713ef5b2ad))
+- **agents:** remove unused reducer function from forks ([464464e](https://github.com/DaoChaShao/py-st-run-pro/commit/464464e0d8f2ed78ea1b4dc74c433a8fa32c4b89))
+- **agents:** remove reducer from public API exports ([998af8e](https://github.com/DaoChaShao/py-st-run-pro/commit/998af8e7eba36294a8b092b1bc6d125cfd4c2825))
 - **analyser:** condense workload analysis prompt ([9641f44](https://github.com/DaoChaShao/py-st-run-pro/commit/9641f442c39affd42d8db3c1b2c3657810ad2197))
 - **dbk:** merge constants into configs module ([827d398](https://github.com/DaoChaShao/py-st-run-pro/commit/827d398861788a894fb97e688e4d90b9dc375c6b))
 - **dbk:** consolidate SQLITE import into configs module ([28f6330](https://github.com/DaoChaShao/py-st-run-pro/commit/28f6330ae1dfedd92c0eeffaeb0fd12fe52ebe23))
