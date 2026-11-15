@@ -12,10 +12,10 @@ from langgraph.runtime import Runtime
 
 from ..models import ACWRAssessment
 from .services import ACWRCalculator
-from .states import Context, Input, Output, State
+from .states import ACWRContext, ACWRInput, ACWROutput, ACWRState
 
 
-def node_calculate(state: Input, runtime: Runtime[Context]) -> State:
+def acwr_node_calculate(state: ACWRInput, runtime: Runtime[ACWRContext]) -> ACWRState:
     """
     The node for calculating the statistics
 
@@ -29,10 +29,10 @@ def node_calculate(state: Input, runtime: Runtime[Context]) -> State:
         outcome = calculator.calculate()
 
     runtime.context.logs.append("Calculation")
-    return State(statistics=outcome)
+    return ACWRState(statistics=outcome)
 
 
-def node_assess(state: State, runtime: Runtime[Context]) -> Output:
+def acwr_node_assess(state: ACWRState, runtime: Runtime[ACWRContext]) -> ACWROutput:
     """
     The note for assessing the statistics
 
@@ -54,4 +54,4 @@ def node_assess(state: State, runtime: Runtime[Context]) -> Output:
 
     runtime.context.logs.append("Assessment")
     runtime.context.logs.append("End")
-    return Output(assessment=outcome)
+    return ACWROutput(assessment=outcome)
