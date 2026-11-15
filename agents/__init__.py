@@ -6,8 +6,17 @@
 # @File     :   __init__.py.py
 # @Desc     :
 
+"""
+************************************************************************
+Agents Toolkit
+------------------------------------------------------------------------
+A collection of components for LangGraph agents, including graph-based
+workflow execution and structured output generation.
+************************************************************************
+"""
+
 from .analyser import ACWRAssessment, ACWRGrapher
-from .forks import AgentInitialiser, load_yaml, reducer
+from .forks import AgentInitialiser, load_yaml
 from .types import ModelCategories, ModelOutputMethods
 
 __author__ = "Shawn Yu"
@@ -19,7 +28,6 @@ __all__ = [
 
     "AgentInitialiser",
     "load_yaml",
-    "reducer",
 
     "ModelCategories",
     "ModelOutputMethods",
