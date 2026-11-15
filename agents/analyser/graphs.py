@@ -75,12 +75,12 @@ class ACWRGrapher(Access):
         ) as agent:
             return Context(agent=agent.initialise(), prompt=self._prompt, method=self._method, language=self._language)
 
-    def graph(self) -> Any:
+    def graph(self) -> tuple[Any, list[str]]:
         """ Graph the ACWR data """
         graph: Any = self._init_graph()
         agent: Context = self._init_agent()
         data: Input = Input(status="Start", data=self._data)
-        return graph.invoke(data, context=agent)
+        return graph.invoke(data, context=agent), agent.logs
 
     def __enter__(self) -> Self:
         """ Contextual management """
