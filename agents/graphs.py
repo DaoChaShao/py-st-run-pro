@@ -16,11 +16,11 @@ from pandas import DataFrame
 from utils.helper import Access
 from utils.types import Languages
 
-from ..forks import AgentInitialiser
-from ..types import ModelCategories, ModelOutputMethods
-from .nodes import node_assess, node_calculate
-from .services import PROMPT
-from .states import Context, Input, Output, State
+from .acwr.nodes import node_assess, node_calculate
+from .acwr.services import PROMPT
+from .acwr.states import Context, Input, Output, State
+from .forks import AgentInitialiser
+from .types import ModelCategories, ModelOutputMethods
 
 
 class ACWRGrapher(Access):
