@@ -161,7 +161,7 @@ from utils.helper import Access
 #     """
 # )
 
-PROMPT: ChatPromptTemplate = ChatPromptTemplate.from_template(
+ACWR_PROMPT: ChatPromptTemplate = ChatPromptTemplate.from_template(
     """
     You are a sports training analyst.
 
