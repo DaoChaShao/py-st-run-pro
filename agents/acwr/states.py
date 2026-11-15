@@ -6,7 +6,6 @@
 # @File     :   states.py
 # @Desc     :
 
-
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.prompts import ChatPromptTemplate
 from pandas import DataFrame
@@ -18,12 +17,12 @@ from ..models import ACWRAssessment
 from ..types import ModelOutputMethods
 
 
-class State(BaseModel):
+class ACWRState(BaseModel):
     """ Main State"""
     statistics: dict[str, dict[str, float]]
 
 
-class Context(BaseModel):
+class ACWRContext(BaseModel):
     """ Context State """
     agent: BaseChatModel
     prompt: ChatPromptTemplate
@@ -32,7 +31,7 @@ class Context(BaseModel):
     logs: list[str] = Field(default_factory=list)
 
 
-class Input(BaseModel):
+class ACWRInput(BaseModel):
     """ Input State
 
     - str
@@ -49,6 +48,6 @@ class Input(BaseModel):
     data: InstanceOf[DataFrame]
 
 
-class Output(BaseModel):
+class ACWROutput(BaseModel):
     """ Output State """
     assessment: ACWRAssessment
