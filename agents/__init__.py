@@ -16,8 +16,8 @@ workflow execution and structured output generation.
 """
 
 from .forks import AgentInitialiser, load_yaml
-from .graphs import ACWRGrapher
-from .models import ACWRAssessment
+from .graphs import ACWRGrapher, EFGrapher
+from .models import ACWRAssessment, EFAssessment
 from .types import ModelCategories, ModelOutputMethods
 
 __author__ = "Shawn Yu"
@@ -25,11 +25,13 @@ __version__ = "0.1.0"
 
 __all__ = [
     "ACWRGrapher",
+    "EFGrapher",
 
     "AgentInitialiser",
     "load_yaml",
 
     "ACWRAssessment",
+    "EFAssessment",
 
     "ModelCategories",
     "ModelOutputMethods",
