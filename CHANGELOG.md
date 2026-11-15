@@ -5,6 +5,12 @@
 
 ### Features
 
+- **ef:** add state definitions for EF agent ([60c2b50](https://github.com/DaoChaShao/py-st-run-pro/commit/60c2b5051c598e4e7e9f26fffe718ccadd00e27e))
+- **ef:** add efficiency factor prompt template ([66a2636](https://github.com/DaoChaShao/py-st-run-pro/commit/66a2636c1888ad3583947b3603a71f551749530f))
+- **ef:** add EF assessment node for langgraph ([0b8e0b6](https://github.com/DaoChaShao/py-st-run-pro/commit/0b8e0b688c80d6fe0801d789d1cd500181a915d6))
+- **agents:** add EFGrapher for efficiency factor assessment ([4bca7a7](https://github.com/DaoChaShao/py-st-run-pro/commit/4bca7a72007b04c8a726a6b97873a714d55e7a16))
+- **ef:** add efficiency factor AI assessment page ([7242e87](https://github.com/DaoChaShao/py-st-run-pro/commit/7242e872601adb96c5b2a75d14c64ca9351a3967))
+- **agents:** expose EF classes in package public API ([755f25e](https://github.com/DaoChaShao/py-st-run-pro/commit/755f25e0a002781aed983c3d0b4f6900fe779bc7))
 - **ef:** add agent package init module ([fabad22](https://github.com/DaoChaShao/py-st-run-pro/commit/fabad220f80a4e23634ad07de4c04667453dc66b))
 - **acwr:** add AI assessment caching and regenerate flow ([928058e](https://github.com/DaoChaShao/py-st-run-pro/commit/928058e03b948661543c8f723a79ffc75936ac0a))
 - update the uv.lock file ([d5a7c0d](https://github.com/DaoChaShao/py-st-run-pro/commit/d5a7c0da438c81c9c77a57b6f720b0eaca4e53bf))
@@ -120,8 +126,8 @@
 
 ### Docs
 
+- **changelog:** update changelog with latest entries ([616ca5d](https://github.com/DaoChaShao/py-st-run-pro/commit/616ca5d7b20a56007f9f7e22baa97dc04d1c5a3a))
 - **ef:** fix description field in module header comment ([6147008](https://github.com/DaoChaShao/py-st-run-pro/commit/6147008475ec44c9c7599b3b04976ab510007a36))
-- **changelog:** update changelog with latest entries ([9526f67](https://github.com/DaoChaShao/py-st-run-pro/commit/9526f6727956645d53ee4ab8685dd8094a91e18a))
 - **changelog:** update changelog with new features and refactors ([c706505](https://github.com/DaoChaShao/py-st-run-pro/commit/c706505a93410c3898fba82e33f91243f59233fa))
 - **analyser:** add module docstring to analyser package ([feb581f](https://github.com/DaoChaShao/py-st-run-pro/commit/feb581f4f8c03858f74cc8432e2c25a4e99e058f))
 - **changelog:** update changelog with new feature and refactor entries ([3cd19f3](https://github.com/DaoChaShao/py-st-run-pro/commit/3cd19f350eb31aecdc84fc8b8754eb78d6a20fde))
@@ -142,6 +148,10 @@
 
 ### Code Refactoring
 
+- **acwr:** rename state classes with ACWR prefix ([1a0e03e](https://github.com/DaoChaShao/py-st-run-pro/commit/1a0e03eb609216c02757cf48aaef4fc7cef16980))
+- **acwr:** rename PROMPT to ACWR_PROMPT for clarity ([f6e8de0](https://github.com/DaoChaShao/py-st-run-pro/commit/f6e8de0e3ad3a109014ab80b92053eb329403669))
+- **acwr:** rename nodes and states with ACWR prefix ([ffe22e6](https://github.com/DaoChaShao/py-st-run-pro/commit/ffe22e6262607065ddca085d158bc5d46e67e26e))
+- **acwr:** rename session state keys and remove dead code ([640bf8a](https://github.com/DaoChaShao/py-st-run-pro/commit/640bf8a299dc015dfe859f9422c2db433a811b32))
 - **agents:** move graphs module to top-level agents package ([b7bb369](https://github.com/DaoChaShao/py-st-run-pro/commit/b7bb36918aa2a2ea7eb4a9b69d6cb08a82b1c8ad))
 - **agents:** use relative import for ModelCategories in forks module ([167b19d](https://github.com/DaoChaShao/py-st-run-pro/commit/167b19d10b9dd1260a537ff8bcdb912daa82e166))
 - **agents:** reorganize ACWR imports into separate modules ([c5e93eb](https://github.com/DaoChaShao/py-st-run-pro/commit/c5e93eb257a4fce6aca8051503acdbf8f7ab3fdd))
