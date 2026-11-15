@@ -15,17 +15,35 @@ from .services import ACWRCalculator
 from .states import Context, Input, Output, State
 
 
-def node_calculate(state: Input) -> State:
-    """ Calculate the notes """
-    curr_status: str = "Calculation"
+def node_calculate(state: Input, runtime: Runtime[Context]) -> State:
+    """
+    The node for calculating the statistics
+
+    :param state: Input state
+    :param runtime: Runtime context
+    :return: State
+    """
+    runtime.context.logs.append(state.status)
+
     with ACWRCalculator(state.data) as calculator:
         outcome = calculator.calculate()
-    return State(status=curr_status, statistics=outcome, logs=[curr_status])
+
+    runtime.context.logs.append("Calculation")
+    return State(statistics=outcome)
 
 
 def node_assess(state: State, runtime: Runtime[Context]) -> Output:
-    """ Assess the notes """
-    structured_llm = runtime.context.agent.with_structured_output(ACWRAssessment, method="json_schema")
+    """
+    The note for assessing the statistics
+
+    :param state: State
+    :param runtime: Runtime context
+    :return: Output
+    """
+    structured_llm = runtime.context.agent.with_structured_output(
+        ACWRAssessment,
+        method=runtime.context.method.JSON_SCHEMA.value
+    )
     outcome = cast(
         ACWRAssessment,
         structured_llm.invoke(runtime.context.prompt.invoke({
@@ -33,4 +51,7 @@ def node_assess(state: State, runtime: Runtime[Context]) -> Output:
             "language": runtime.context.language,
         }))
     )
-    return Output(status="Assessment", assessment=outcome)
+
+    runtime.context.logs.append("Assessment")
+    runtime.context.logs.append("End")
+    return Output(assessment=outcome)
