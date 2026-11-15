@@ -17,6 +17,7 @@ from streamlit import (
     session_state,
     sidebar,
     spinner,
+    write,
 )
 
 from agents import ACWRAssessment, ACWRGrapher
@@ -27,7 +28,7 @@ NOTIFICATION = empty()
 
 sqlite = InitEngine(CONFIG)
 
-for key in ["EXERCISES", "ACWR"]:
+for key in ["EXERCISES", "ACWR", "ASSESSMENT", "LOGS"]:
     if key not in session_state:
         session_state[key] = None
 
@@ -155,36 +156,46 @@ else:
                 sidebar.caption(f"The length of API key you entered is {len(api_key)} characters.")
                 check_api_key(api_key, model=provider, notification=NOTIFICATION)
 
-                if sidebar.button("Generate AI Assessment", type="primary", width="stretch"):
-                    agent_cols: list[str] = [
-                        "date",
-                        "obj_training_load", "sub_training_load",
-                        "obj_acute", "sub_acute",
-                        "obj_chronic", "sub_chronic",
-                        "obj_acwr", "sub_acwr",
-                        "difference",
-                    ]
-                    agent_data: DataFrame = session_state["ACWR"][agent_cols]
+                if session_state["ASSESSMENT"] is None or session_state["LOGS"] is None:
 
-                    with (
-                        spinner("Generating AI assessment...", show_time=True, width="stretch"),
-                        ACWRGrapher(
-                            agent_data,
-                            model=provider,
-                            temperature=temperature,
-                            api_key=api_key,
-                            language=language,
-                        ) as grapher,
-                    ):
-                        response = grapher.graph()
-                        # print(response)
+                    if sidebar.button("Generate AI Assessment", type="primary", width="stretch"):
+                        agent_cols: list[str] = [
+                            "date",
+                            "obj_training_load", "sub_training_load",
+                            "obj_acute", "sub_acute",
+                            "obj_chronic", "sub_chronic",
+                            "obj_acwr", "sub_acwr",
+                            "difference",
+                        ]
+                        agent_data: DataFrame = session_state["ACWR"][agent_cols]
 
-                    assessment: ACWRAssessment = response["assessment"]
+                        with (
+                            spinner("Generating AI assessment...", show_time=True, width="stretch"),
+                            ACWRGrapher(
+                                agent_data,
+                                model=provider,
+                                temperature=temperature,
+                                api_key=api_key,
+                                language=language,
+                            ) as grapher,
+                        ):
+                            response, session_state["LOGS"] = grapher.graph()
+                            # print(response)
+
+                        session_state["ASSESSMENT"]: ACWRAssessment = response["assessment"]
+                        rerun()
+                else:
+                    with expander("**AI Graph Logs**", expanded=False):
+                        write(session_state["LOGS"])
 
                     markdown("##### Training Analysis")
-                    markdown(assessment.analysis)
-
+                    markdown(session_state["ASSESSMENT"].analysis)
                     markdown("##### Training Prescription")
-                    markdown(assessment.prescription)
+                    markdown(session_state["ASSESSMENT"].prescription)
 
                     NOTIFICATION.success("AI assessment generated successfully.")
+
+                    if sidebar.button("Regenerate AI Assessment", type="secondary", width="stretch"):
+                        session_state["ASSESSMENT"] = None
+                        session_state["LOGS"] = None
+                        rerun()
