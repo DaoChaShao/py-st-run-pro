@@ -14,8 +14,8 @@ from pydantic import BaseModel, Field, InstanceOf
 
 from utils.types import Languages
 
+from ..models import ACWRAssessment
 from ..types import ModelOutputMethods
-from .models import ACWRAssessment
 
 
 class State(BaseModel):

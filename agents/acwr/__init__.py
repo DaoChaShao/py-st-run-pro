@@ -15,8 +15,9 @@ workflow execution and structured output generation.
 ************************************************************************
 """
 
+from agents.models import ACWRAssessment
+
 from .graphs import ACWRGrapher
-from .models import ACWRAssessment
 
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"

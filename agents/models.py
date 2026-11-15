@@ -12,3 +12,8 @@ from pydantic import BaseModel, Field
 class ACWRAssessment(BaseModel):
     analysis: str = Field(description="Training workload and fatigue analysis")
     prescription: str = Field(description="Training and recovery recommendations")
+
+
+class EFAssessment(BaseModel):
+    analysis: str = Field(description="Analysis of exercise efficiency and performance trends.")
+    prescription: str = Field(description="Training recommendations based on efficiency analysis.")
