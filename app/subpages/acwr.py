@@ -21,14 +21,11 @@ from streamlit import (
 )
 
 from agents import ACWRAssessment, ACWRGrapher
-from app.tools import CONFIG, check_api_key
-from utils.dbk import InitEngine
+from app.tools import check_api_key
 
 NOTIFICATION = empty()
 
-sqlite = InitEngine(CONFIG)
-
-for key in ["EXERCISES", "ACWR", "ASSESSMENT", "LOGS"]:
+for key in ["EXERCISES", "ACWR", "ACWR_ASSESSMENT", "ACWR_LOGS"]:
     if key not in session_state:
         session_state[key] = None
 
@@ -156,7 +153,7 @@ else:
                 sidebar.caption(f"The length of API key you entered is {len(api_key)} characters.")
                 check_api_key(api_key, model=provider, notification=NOTIFICATION)
 
-                if session_state["ASSESSMENT"] is None or session_state["LOGS"] is None:
+                if session_state["ACWR_ASSESSMENT"] is None or session_state["ACWR_LOGS"] is None:
 
                     if sidebar.button("Generate AI Assessment", type="primary", width="stretch"):
                         agent_cols: list[str] = [
@@ -179,14 +176,14 @@ else:
                                 language=language,
                             ) as grapher,
                         ):
-                            response, session_state["LOGS"] = grapher.graph()
+                            response, session_state["ACWR_LOGS"] = grapher.graph()
                             # print(response)
 
-                        session_state["ASSESSMENT"]: ACWRAssessment = response["assessment"]
+                        session_state["ACWR_ASSESSMENT"]: ACWRAssessment = response["assessment"]
                         rerun()
                 else:
                     with expander("**AI Graph Logs**", expanded=False):
-                        write(session_state["LOGS"])
+                        write(session_state["ACWR_LOGS"])
 
                     markdown("##### Training Analysis")
                     markdown(session_state["ASSESSMENT"].analysis)
@@ -196,6 +193,6 @@ else:
                     NOTIFICATION.success("AI assessment generated successfully.")
 
                     if sidebar.button("Regenerate AI Assessment", type="secondary", width="stretch"):
-                        session_state["ASSESSMENT"] = None
-                        session_state["LOGS"] = None
+                        session_state["ACWR_ASSESSMENT"] = None
+                        session_state["ACWR_LOGS"] = None
                         rerun()
