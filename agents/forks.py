@@ -15,9 +15,7 @@ from langchain_openai import ChatOpenAI
 from pydantic import SecretStr
 from yaml import dump, safe_load
 
-from agents.types import (
-    ModelCategories,
-)
+from agents.types import ModelCategories
 from utils.helper import Access
 
 
@@ -139,16 +137,3 @@ def load_yaml(filepath: str | Path, *, display: bool = True) -> dict:
         print(f"Loaded YAML config from: {_path.resolve()}")
         print(dump(data, allow_unicode=True, sort_keys=False).strip())
     return data
-
-
-def reducer(curr_state: str, new_state: str) -> str:
-    """
-    Reduce the logs list
-
-    :param curr_state: Current state
-    :param new_state: New state
-    :return: Reduced state
-    """
-    if not curr_state:
-        return new_state
-    return curr_state + " -> " + new_state
