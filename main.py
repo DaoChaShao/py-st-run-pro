@@ -6,7 +6,6 @@
 # @File     :   main.py
 # @Desc     :
 
-
 from app.tools import config_page, set_pages
 
 
