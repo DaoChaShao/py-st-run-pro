@@ -6,7 +6,6 @@
 # @File     :   ef.py
 # @Desc     :
 
-from pandas import DataFrame
 from streamlit import (
     data_editor,
     empty,
@@ -25,12 +24,12 @@ from app.tools import check_api_key
 
 NOTIFICATION = empty()
 
-for key in ["EXERCISES", "DATA", "EF_ASSESSMENT", "EF_LOGS"]:
+for key in ["IMPUTATION", "DATA", "EF_ASSESSMENT", "EF_LOGS"]:
     if key not in session_state:
         session_state[key] = None
 
-if session_state["EXERCISES"] is None:
-    NOTIFICATION.warning("Please load the data first.")
+if session_state["IMPUTATION"] is None:
+    NOTIFICATION.warning("Please perform imputation first.")
 else:
     agent_cols: list[str] = [
         "date",
@@ -44,7 +43,7 @@ else:
         NOTIFICATION.warning("Please load the data first.")
 
         if sidebar.button("Efficiency Factor View", type="primary", width="stretch"):
-            session_state["DATA"] = session_state["EXERCISES"][agent_cols].copy()
+            session_state["DATA"] = session_state["IMPUTATION"][agent_cols].copy()
             rerun()
     else:
         NOTIFICATION.info("Data loaded successfully.")
@@ -55,7 +54,7 @@ else:
 
         chart_selection: list[str] = ["date", "efficiency_factor"]
         chart_data = session_state["DATA"][chart_selection].set_index("date").sort_index()
-        line_chart(chart_data, width="stretch")
+        line_chart(chart_data, width="stretch", height="stretch")
 
         providers: list[str] = ["OpenAI", "DeepSeek"]
         provider: str = sidebar.selectbox(
@@ -103,11 +102,10 @@ else:
                 if session_state["EF_ASSESSMENT"] is None or session_state["EF_LOGS"] is None:
 
                     if sidebar.button("Generate AI Assessment", type="primary", width="stretch"):
-                        agent_data: DataFrame = session_state["ACWR"][agent_cols]
                         with (
                             spinner("Generating AI assessment...", show_time=True, width="stretch"),
                             EFGrapher(
-                                agent_data,
+                                session_state["DATA"].copy(),
                                 model=provider,
                                 temperature=temperature,
                                 api_key=api_key,
@@ -124,9 +122,9 @@ else:
                         write(session_state["EF_LOGS"])
 
                     markdown("##### Training Analysis")
-                    markdown(session_state["ASSESSMENT"].analysis)
+                    markdown(session_state["EF_ASSESSMENT"].analysis)
                     markdown("##### Training Prescription")
-                    markdown(session_state["ASSESSMENT"].prescription)
+                    markdown(session_state["EF_ASSESSMENT"].prescription)
 
                     NOTIFICATION.success("AI assessment generated successfully.")
 
