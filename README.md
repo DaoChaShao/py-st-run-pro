@@ -3,6 +3,82 @@
   <a href="./README.zh-CN.md">🇨🇳 中文</a> | <a href="./README.md">🇬🇧 English</a>
 </p>
 
+**INTRODUCTION**
+---
+**Runner Pro** is a Python-based running analytics and AI agent application designed to transform personal exercise
+records into meaningful, data-driven insights through exercise science, statistical analysis, interactive visualisation,
+and intelligent assessment.
+
+Built with **Streamlit**, Runner Pro integrates traditional data analytics with **specialised AI agents powered by
+LangGraph and large language models (LLMs)**. The application provides dedicated analytical workflows for evaluating
+training workloads, running efficiency, and post-exercise heart rate recovery.
+
+Rather than relying exclusively on LLMs for numerical calculations, Runner Pro combines **deterministic data processing
+and exercise metric calculations with agent-based interpretation and assessment**. This approach separates quantitative
+analysis from AI-generated insights, supporting more transparent, structured, and evidence-informed assessments.
+
+**FEATURES**
+---
+
+- **Data Management:** Load, organise, and explore exercise records through structured data management workflows.
+- **Data Quality & Imputation:** Identify missing values and duplicate records, and apply configurable numerical and
+  categorical imputation methods.
+- **Acute:Chronic Workload Ratio (ACWR):** Examine short-term and long-term training workload relationships to identify
+  workload variations.
+- **Efficiency Factor (EF):** Evaluate running efficiency through the relationship between exercise speed and average
+  heart rate.
+- **Heart Rate Recovery (HRR):** Analyse post-exercise heart rate recovery using measurements collected immediately
+  after exercise and during the following two minutes.
+- **Interactive Data Visualisation:** Explore exercise metrics and longitudinal trends through interactive data tables
+  and charts.
+- **AI Agents:** Use specialised agents to interpret exercise metrics, identify relevant patterns, evaluate data
+  limitations, and generate contextual assessments.
+- **Agent-Based Workflows:** Orchestrate analytical and assessment operations using LangGraph, with structured data
+  models and configurable LLM integrations.
+- **AI-Assisted Training Recommendations:** Generate conditional training and recovery recommendations based on
+  available exercise data.
+- **Configurable Analysis:** Customise supported data processing methods, AI models, and assessment languages.
+
+**AGENT ARCHITECTURE**
+---
+Runner Pro incorporates a modular AI agent architecture built with **LangGraph, LangChain, and Pydantic**.
+
+Specialised analytical agents are designed to handle different aspects of running performance:
+
+- **ACWR Agent:** Analyses acute and chronic training workload relationships and provides workload management
+  assessments.
+- **EF Agent:** Interprets running efficiency trends and evaluates variations in speed relative to heart rate.
+- **HRR Agent:** Examines post-exercise heart rate recovery patterns, including first-minute and second-minute recovery
+  characteristics.
+
+The agent workflows combine quantitative exercise data with LLM-based interpretation, using structured input and output
+schemas to maintain consistent assessment formats.
+
+The architecture separates data preparation, numerical calculations, agent orchestration, and assessment generation,
+allowing individual analytical components to be developed and maintained independently.
+
+**TECHNOLOGY STACK**
+---
+
+- **Python:** Core application development and analytical logic.
+- **Streamlit:** Interactive user interface and data visualisation.
+- **Pandas:** Data manipulation, preprocessing, and numerical calculations.
+- **SQLAlchemy & SQLite:** Database operations and structured data storage.
+- **Pydantic:** Data validation and structured AI assessment outputs.
+- **LangChain:** LLM integration and structured model interactions.
+- **LangGraph:** Agent workflow orchestration and state management.
+- **DeepSeek & OpenAI:** Supported LLM providers for AI-assisted assessments.
+
+**Simple Demonstration**
+---
+
+1. Clone the repository to your local machine.
+2. Install the required dependencies with the command `pip install -r requirements.txt`.
+3. Run the application with the command `streamlit run main.py`.
+4. You can also try the application by visiting the following
+   link:  
+   [![Static Badge](https://img.shields.io/badge/Open%20in%20Streamlit-Daochashao-red?style=for-the-badge&logo=streamlit&labelColor=white)](https://lg-run-pro.streamlit.app/)
+
 **PRIVACY NOTICE**
 ---
 
