@@ -157,6 +157,14 @@ def cal_efficiency_factor(data: DataFrame) -> DataFrame:
     return data
 
 
+def cal_hrr(data: DataFrame) -> DataFrame:
+    """Calculate heart rate recovery after exercise."""
+    data["hr_drop_0_1_min"] = data["post_heart_rate_i"] - data["post_heart_rate_ii"]
+    data["hr_drop_0_2_min"] = data["post_heart_rate_i"] - data["post_heart_rate_iii"]
+    data["hr_drop_1_2_min"] = data["post_heart_rate_ii"] - data["post_heart_rate_iii"]
+    return data
+
+
 def cal_stride_length(data: DataFrame) -> DataFrame:
     """ Calculate the stride length of the exercise """
     data["stride_length"] = (data["distance"] * 1000) / (data["avg_cadence"] * data["duration"])
