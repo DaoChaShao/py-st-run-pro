@@ -5,6 +5,8 @@
 
 ### Features
 
+- new a database ([eb3d627](https://github.com/DaoChaShao/py-st-run-pro/commit/eb3d627ca7c093c63a0be9dda205a9b65309721c))
+- update the data ([185c4c2](https://github.com/DaoChaShao/py-st-run-pro/commit/185c4c26eb67a728f2cc6979e07d4808f2d5efa9))
 - **hrr:** add state definitions for HRR agent module ([2fa0edb](https://github.com/DaoChaShao/py-st-run-pro/commit/2fa0edbda63df329339f351a186eeab200716a83))
 - **spoons:** add heart rate recovery calculation function ([afb3ef0](https://github.com/DaoChaShao/py-st-run-pro/commit/afb3ef0cb99a9046aa21d9d748556b4ab877b85a))
 - **hrr:** add heart rate recovery analysis prompt template ([c492523](https://github.com/DaoChaShao/py-st-run-pro/commit/c492523b8f66dbd5f378a3f456dfd0608b0c38a0))
@@ -82,7 +84,6 @@
 - **dbk:** add Exercise ORM model for tracking workouts ([7fc3399](https://github.com/DaoChaShao/py-st-run-pro/commit/7fc3399d298d0726965faa318dd2ef6bad90c35e))
 - **dbk:** implement SQLAlchemy engine initialization and database operations ([cea2f0e](https://github.com/DaoChaShao/py-st-run-pro/commit/cea2f0e8ce2e135884927f2ab296d03ec5e912d3))
 - **dbk:** add DBConfig and engine utilities to public API ([bbc2ac5](https://github.com/DaoChaShao/py-st-run-pro/commit/bbc2ac5eaae80e98cbe94d3826799195be915ae5))
-- update the data ([2d0095e](https://github.com/DaoChaShao/py-st-run-pro/commit/2d0095e36f9e250fffc9162828af476a966f4deb))
 - **dbk:** add engines module skeleton ([1d99e7f](https://github.com/DaoChaShao/py-st-run-pro/commit/1d99e7f4c25feea11eb26fdcab0a215cd13dc26c))
 - **dbk:** add SQLite database path constants ([60af501](https://github.com/DaoChaShao/py-st-run-pro/commit/60af501493b03f66df29e8a529bf152fe6c636a1))
 - **dbk:** add database configuration dataclass ([3ae956d](https://github.com/DaoChaShao/py-st-run-pro/commit/3ae956d5c0fb9e572da4f4e2a9ae7f6918bcadd8))
@@ -140,6 +141,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with recent documentation entries ([4decd7f](https://github.com/DaoChaShao/py-st-run-pro/commit/4decd7f7b07d7eda60fddb7153f74c0c921d47b8))
 - **readme:** add project overview and feature documentation ([4a330a3](https://github.com/DaoChaShao/py-st-run-pro/commit/4a330a3b12cc90789a79cdfec3bd1c54dafd1911))
 - **readme:** add comprehensive project documentation ([e869801](https://github.com/DaoChaShao/py-st-run-pro/commit/e869801ddfcf3c96e1c43f8245e4d112316195e3))
 - **home:** add feature descriptions to introduction sections ([0cc83c2](https://github.com/DaoChaShao/py-st-run-pro/commit/0cc83c2f409502dda58e61bfc5eb2cc3cf503198))
