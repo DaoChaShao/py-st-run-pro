@@ -17,3 +17,8 @@ class ACWRAssessment(BaseModel):
 class EFAssessment(BaseModel):
     analysis: str = Field(description="Analysis of exercise efficiency and performance trends.")
     prescription: str = Field(description="Training recommendations based on efficiency analysis.")
+
+
+class HRRAssessment(BaseModel):
+    analysis: str = Field(description="Analysis of heart rate recovery and fatigue levels.")
+    prescription: str = Field(description="Training and recovery recommendations based on HRR analysis.")
