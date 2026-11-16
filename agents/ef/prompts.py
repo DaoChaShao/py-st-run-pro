@@ -3,7 +3,7 @@
 # @Time     :   2026/11/15 22:50
 # @Author   :   Shawn
 # @Version  :   Version 0.1.0
-# @File     :   services.py
+# @File     :   prompts.py
 # @Desc     :
 
 from langchain_core.prompts import ChatPromptTemplate
