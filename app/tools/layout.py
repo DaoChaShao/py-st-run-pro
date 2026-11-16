@@ -32,7 +32,7 @@ def set_pages() -> None:
             "app/subpages/preparation.py",
             "app/subpages/ef.py",
             "app/subpages/acwr.py",
-            # "app/subpages/prescription.py"
+            "app/subpages/hrr.py"
         ],
         "title": [
             "Home",
@@ -40,7 +40,7 @@ def set_pages() -> None:
             "Data Preparation",
             "Efficiency Factor",
             "Acute:Chronic Workload Ratio",
-            # "AI-Driven Training Load Prescription"
+            "Heart Rate Recovery",
         ],
         "icon": [
             ":material/home:",
@@ -48,7 +48,7 @@ def set_pages() -> None:
             ":material/dashboard:",
             ":material/looks_one:",
             ":material/looks_two:",
-            # ":material/clinical_notes:"
+            ":material/looks_3:"
         ],
     }
 
@@ -61,6 +61,7 @@ def set_pages() -> None:
             Page(page=pages["page"][2], title=pages["title"][2], icon=pages["icon"][2]),
             Page(page=pages["page"][3], title=pages["title"][3], icon=pages["icon"][3]),
             Page(page=pages["page"][4], title=pages["title"][4], icon=pages["icon"][4]),
+            Page(page=pages["page"][5], title=pages["title"][5], icon=pages["icon"][5]),
         ],
     }
     pg = navigation(structure, position="sidebar", expanded=True)
