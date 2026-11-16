@@ -140,6 +140,10 @@
 
 ### Docs
 
+- **readme:** add project overview and feature documentation ([4a330a3](https://github.com/DaoChaShao/py-st-run-pro/commit/4a330a3b12cc90789a79cdfec3bd1c54dafd1911))
+- **readme:** add comprehensive project documentation ([e869801](https://github.com/DaoChaShao/py-st-run-pro/commit/e869801ddfcf3c96e1c43f8245e4d112316195e3))
+- **home:** add feature descriptions to introduction sections ([0cc83c2](https://github.com/DaoChaShao/py-st-run-pro/commit/0cc83c2f409502dda58e61bfc5eb2cc3cf503198))
+- **changelog:** update changelog with HRR and ACWR entries ([d32b160](https://github.com/DaoChaShao/py-st-run-pro/commit/d32b16038874c255de7b29d10a9732d7be4d00f9))
 - **changelog:** update changelog with EF and ACWR entries ([5e6b4dd](https://github.com/DaoChaShao/py-st-run-pro/commit/5e6b4ddb10a119d390aad0b13d0e2ea6eb264323))
 - **changelog:** update changelog with latest entries ([616ca5d](https://github.com/DaoChaShao/py-st-run-pro/commit/616ca5d7b20a56007f9f7e22baa97dc04d1c5a3a))
 - **ef:** fix description field in module header comment ([6147008](https://github.com/DaoChaShao/py-st-run-pro/commit/6147008475ec44c9c7599b3b04976ab510007a36))
@@ -159,7 +163,6 @@
 - **changelog:** update CHANGELOG.md with recent feature and refactor entries ([7b2aa4d](https://github.com/DaoChaShao/py-st-run-pro/commit/7b2aa4db761e089cd8395e0979692d4cfff90138))
 - **changelog:** add CHANGELOG.md for v0.1.0 ([5621b8a](https://github.com/DaoChaShao/py-st-run-pro/commit/5621b8a4e5d46a2e882f393abaa5c21b3ca6bccd))
 - **readme:** add Chinese README with env setup and changelog ([3b2a26d](https://github.com/DaoChaShao/py-st-run-pro/commit/3b2a26d79d016bdcc08c697a819dfbe8e4cb8439))
-- **readme:** add comprehensive project documentation ([ea44e27](https://github.com/DaoChaShao/py-st-run-pro/commit/ea44e27474bb57acd2846350462c9f686c935d0b))
 
 ### Code Refactoring
 
