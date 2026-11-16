@@ -15,23 +15,25 @@ workflow execution and structured output generation.
 ************************************************************************
 """
 
-from .forks import AgentInitialiser, load_yaml
-from .graphs import ACWRGrapher, EFGrapher
-from .models import ACWRAssessment, EFAssessment
-from .types import ModelCategories, ModelOutputMethods
-
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
+
+from .forks import AgentInitialiser, load_yaml
+from .graphs import ACWRGrapher, EFGrapher, HRRGrapher
+from .models import ACWRAssessment, EFAssessment, HRRAssessment
+from .types import ModelCategories, ModelOutputMethods
 
 __all__ = [
     "ACWRGrapher",
     "EFGrapher",
+    "HRRGrapher",
 
     "AgentInitialiser",
     "load_yaml",
 
     "ACWRAssessment",
     "EFAssessment",
+    "HRRAssessment",
 
     "ModelCategories",
     "ModelOutputMethods",
