@@ -22,17 +22,18 @@ from streamlit import (
 
 from agents import ACWRAssessment, ACWRGrapher
 from app.tools import check_api_key
+from utils.stats import FeatureScaler, FeatureScalers
 
 NOTIFICATION = empty()
 
-for key in ["EXERCISES", "ACWR", "ACWR_ASSESSMENT", "ACWR_LOGS"]:
+for key in ["IMPUTATION", "ACWR", "ACWR_ASSESSMENT", "ACWR_LOGS"]:
     if key not in session_state:
         session_state[key] = None
 
-if session_state["EXERCISES"] is None:
-    NOTIFICATION.warning("Please load the data first.")
+if session_state["IMPUTATION"] is None:
+    NOTIFICATION.warning("Please perform imputation first.")
 else:
-    data = session_state["EXERCISES"].copy()
+    data = session_state["IMPUTATION"].copy()
     NOTIFICATION.info("Data loaded successfully.")
 
     if session_state["ACWR"] is None:
@@ -105,9 +106,9 @@ else:
         )
         if selections:
             chart_data = session_state["ACWR"].set_index("date").sort_index()[selections]
-            # with FeatureScaler(chart_data, category=FeatureScalers.NORMALISATION) as scaler:
-            #     scaled_data = scaler.scale()
-            line_chart(chart_data, width="stretch")
+            with FeatureScaler(chart_data, category=FeatureScalers.NORMALISATION) as scaler:
+                scaled_data = scaler.scale()
+            line_chart(chart_data, width="stretch", height="stretch")
 
         sidebar.divider()
         providers: list[str] = ["OpenAI", "DeepSeek"]
@@ -186,9 +187,9 @@ else:
                         write(session_state["ACWR_LOGS"])
 
                     markdown("##### Training Analysis")
-                    markdown(session_state["ASSESSMENT"].analysis)
+                    markdown(session_state["ACWR_ASSESSMENT"].analysis)
                     markdown("##### Training Prescription")
-                    markdown(session_state["ASSESSMENT"].prescription)
+                    markdown(session_state["ACWR_ASSESSMENT"].prescription)
 
                     NOTIFICATION.success("AI assessment generated successfully.")
 
