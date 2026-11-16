@@ -1,10 +1,22 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-15)
+## [0.1.0](https://github.com/DaoChaShao/py-st-run-pro/compare/5269934d43e0aff64830b13db930ff14b6cca7a5...0.1.0) (2026-11-16)
 
 ### Features
 
+- **hrr:** add state definitions for HRR agent module ([2fa0edb](https://github.com/DaoChaShao/py-st-run-pro/commit/2fa0edbda63df329339f351a186eeab200716a83))
+- **spoons:** add heart rate recovery calculation function ([afb3ef0](https://github.com/DaoChaShao/py-st-run-pro/commit/afb3ef0cb99a9046aa21d9d748556b4ab877b85a))
+- **hrr:** add heart rate recovery analysis prompt template ([c492523](https://github.com/DaoChaShao/py-st-run-pro/commit/c492523b8f66dbd5f378a3f456dfd0608b0c38a0))
+- **acwr:** add ACWR analysis prompt template ([1f9a481](https://github.com/DaoChaShao/py-st-run-pro/commit/1f9a4810d802ddcc5289edfb3bf279fa33ac2a10))
+- **hrr:** add assessment node for efficiency factor ([996b15b](https://github.com/DaoChaShao/py-st-run-pro/commit/996b15b68207b274b9c6163005fd71f91ee2476a))
+- **agents:** add HRRAssessment model for heart rate recovery ([31cef51](https://github.com/DaoChaShao/py-st-run-pro/commit/31cef5133069882c3ea2f223eb7f111cb2230950))
+- **layout:** add Heart Rate Recovery subpage to navigation ([32f7172](https://github.com/DaoChaShao/py-st-run-pro/commit/32f7172bc73d00259fb683836eba5a70adfbf27e))
+- **hrr:** add heart rate recovery analysis subpage ([3c01007](https://github.com/DaoChaShao/py-st-run-pro/commit/3c01007a05b925c61b3ebda575edc6ab2821fa92))
+- **agents:** add HRRGrapher and fix EFGrapher param name ([660ff58](https://github.com/DaoChaShao/py-st-run-pro/commit/660ff58356498be8599f11bcf60d0dc7a7275694))
+- **tools:** add cal_hrr function to module exports ([ab7f072](https://github.com/DaoChaShao/py-st-run-pro/commit/ab7f0725ee765f3fe137173d7d5bf1ef26c87b3c))
+- **agents:** add HRR grapher and assessment model ([6ebf6cc](https://github.com/DaoChaShao/py-st-run-pro/commit/6ebf6cc3bee3de4b405afac75499b9be8fdfeea1))
+- **agents:** add hrr agent package scaffold ([6500d67](https://github.com/DaoChaShao/py-st-run-pro/commit/6500d679aa2e5a637b4db9c0840bde61a24f4e1c))
 - **ef:** add state definitions for EF agent ([60c2b50](https://github.com/DaoChaShao/py-st-run-pro/commit/60c2b5051c598e4e7e9f26fffe718ccadd00e27e))
 - **ef:** add efficiency factor prompt template ([66a2636](https://github.com/DaoChaShao/py-st-run-pro/commit/66a2636c1888ad3583947b3603a71f551749530f))
 - **ef:** add EF assessment node for langgraph ([0b8e0b6](https://github.com/DaoChaShao/py-st-run-pro/commit/0b8e0b688c80d6fe0801d789d1cd500181a915d6))
@@ -94,6 +106,7 @@
 
 ### Bug Fixes
 
+- **ef:** correct session state key references and rename EXERCISES to IMPUTATION ([6ac95ba](https://github.com/DaoChaShao/py-st-run-pro/commit/6ac95ba26553b527c01ac934c2ff05672b86796f))
 - **agents:** correct typo in acwr module import ([892c4d6](https://github.com/DaoChaShao/py-st-run-pro/commit/892c4d623e99df3a9154d3c4f5533ade84b834cc))
 - **dbk:** correct column type mappings in exercise index model ([2db1e60](https://github.com/DaoChaShao/py-st-run-pro/commit/2db1e606d22d25f48f80ab71028b568f88719079))
 - **dbk:** rename sqlite db file to sqlite3.db ([98f464a](https://github.com/DaoChaShao/py-st-run-pro/commit/98f464a7a5f067e063c25625b5aa9168dcb2aabe))
@@ -101,6 +114,7 @@
 
 ### Chore
 
+- **hrr:** add .gitignore for Python project ([767b39a](https://github.com/DaoChaShao/py-st-run-pro/commit/767b39aace4343b26974ce359ca4cf30222ddd76))
 - **ef:** add .gitignore for Python project ([5a34d5e](https://github.com/DaoChaShao/py-st-run-pro/commit/5a34d5e8897862ecdfda60e6e5d0d7317e7e07e4))
 - **deps:** add langchain-deepseek and langgraph deps ([568de01](https://github.com/DaoChaShao/py-st-run-pro/commit/568de01b955e5b9bb06aaa0bb79804d4d0f25b5f))
 - **agents:** add .gitignore for Python artifacts ([806dfd6](https://github.com/DaoChaShao/py-st-run-pro/commit/806dfd61379df98b89cc1c0bfbaf7679573f77b9))
@@ -126,6 +140,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with EF and ACWR entries ([5e6b4dd](https://github.com/DaoChaShao/py-st-run-pro/commit/5e6b4ddb10a119d390aad0b13d0e2ea6eb264323))
 - **changelog:** update changelog with latest entries ([616ca5d](https://github.com/DaoChaShao/py-st-run-pro/commit/616ca5d7b20a56007f9f7e22baa97dc04d1c5a3a))
 - **ef:** fix description field in module header comment ([6147008](https://github.com/DaoChaShao/py-st-run-pro/commit/6147008475ec44c9c7599b3b04976ab510007a36))
 - **changelog:** update changelog with new features and refactors ([c706505](https://github.com/DaoChaShao/py-st-run-pro/commit/c706505a93410c3898fba82e33f91243f59233fa))
@@ -148,6 +163,10 @@
 
 ### Code Refactoring
 
+- **acwr:** remove prompt templates from services module ([28a5832](https://github.com/DaoChaShao/py-st-run-pro/commit/28a583242b87efc74056aacc306e1aafe39361db))
+- **ef:** rename services.py to prompts.py ([c661acf](https://github.com/DaoChaShao/py-st-run-pro/commit/c661acfc3fe25bd2d68426dbe8b778c43b7d705a))
+- **preparation:** add dedicated session state for imputation data ([3ced26a](https://github.com/DaoChaShao/py-st-run-pro/commit/3ced26a3a093577ca51ed89e7f3715c5a13a340f))
+- **acwr:** use imputed data and enable chart normalization ([8e452d1](https://github.com/DaoChaShao/py-st-run-pro/commit/8e452d1106c9a92f147509de09666b9110452c4f))
 - **acwr:** rename state classes with ACWR prefix ([1a0e03e](https://github.com/DaoChaShao/py-st-run-pro/commit/1a0e03eb609216c02757cf48aaef4fc7cef16980))
 - **acwr:** rename PROMPT to ACWR_PROMPT for clarity ([f6e8de0](https://github.com/DaoChaShao/py-st-run-pro/commit/f6e8de0e3ad3a109014ab80b92053eb329403669))
 - **acwr:** rename nodes and states with ACWR prefix ([ffe22e6](https://github.com/DaoChaShao/py-st-run-pro/commit/ffe22e6262607065ddca085d158bc5d46e67e26e))
