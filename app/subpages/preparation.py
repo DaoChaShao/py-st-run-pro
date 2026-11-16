@@ -43,7 +43,7 @@ NOTIFICATION = empty()
 
 sqlite = InitEngine(CONFIG)
 
-for key in ["EXERCISES"]:
+for key in ["EXERCISES", "IMPUTATION"]:
     if key not in session_state:
         session_state[key] = None
 
@@ -88,11 +88,11 @@ with InitSession(sqlite.engine).init() as session:
                 rerun()
         else:
             # Calculate Efficiency Factor
-            session_state["EXERCISES"] = cal_efficiency_factor(session_state["EXERCISES"])
+            session_state["IMPUTATION"] = cal_efficiency_factor(session_state["EXERCISES"])
             # Calculate Stride Length
-            session_state["EXERCISES"] = cal_stride_length(session_state["EXERCISES"])
+            session_state["IMPUTATION"] = cal_stride_length(session_state["EXERCISES"])
 
-            cols: list[str] = session_state["EXERCISES"].columns.tolist().copy()
+            cols: list[str] = session_state["IMPUTATION"].columns.tolist().copy()
             removal: list[str] = ["id", "date", "time", "week", "type", "create_date", "update_date"]
             selections: list[str] = [col for col in cols if col not in removal]
             # print(selections)
@@ -105,10 +105,10 @@ with InitSession(sqlite.engine).init() as session:
             sidebar.caption("The selected column will be displayed as a line chart on the right.")
 
             with expander("**Imputation Data**", expanded=False):
-                data_editor(session_state["EXERCISES"], hide_index=True, disabled=True, width="stretch")
+                data_editor(session_state["IMPUTATION"], hide_index=True, disabled=True, width="stretch")
 
             markdown("##### Overall Line Chart")
-            selected_data = session_state["EXERCISES"][["date", selection]].set_index("date").sort_index()
+            selected_data = session_state["IMPUTATION"][["date", selection]].set_index("date").sort_index()
             start, end = columns(2)
             with start:
                 start_date = date_input(
@@ -140,7 +140,7 @@ with InitSession(sqlite.engine).init() as session:
             )
 
             if picks:
-                grouped_data = session_state["EXERCISES"][["date", *picks]].set_index("date").sort_index()
+                grouped_data = session_state["IMPUTATION"][["date", *picks]].set_index("date").sort_index()
                 with FeatureScaler(grouped_data, category=FeatureScalers.NORMALISATION) as scaler:
                     grouped_data = scaler.scale()
 
